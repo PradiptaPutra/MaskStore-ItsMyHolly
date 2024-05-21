@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keranjang Belanja</title>
+  <link rel="icon" href="/img/Logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function loadCart() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const cartItems = document.getElementById("cart-items");
+      let total = 0;
+
+      cartItems.innerHTML = "";
+
+      for (const item of cart) {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex items-center">
+              <div class="ml-4">
+                <div class="text-sm font-medium text-gray-900">${item.name}</div>
+              </div>
+            </div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <span class="text-sm text-gray-500">RP ${item.price.toLocaleString('id-ID')}</span>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+            <button class="text-indigo-600 hover:text-indigo-900" onclick="removeFromCart(${item.id})">Remove</button>
+          </td>
+        `;
+        cartItems.appendChild(row);
+        total += item.price;
+      }
+
+      document.getElementById("cart-total").textContent = `RP ${total.toLocaleString('id-ID')}`;
+      generateTemplate(cart, total);
+    }
+
+    function addToCart(productId, productName, productPrice) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let existingItem = cart.find((item) => item.id === productId);
+
+      if (existingItem) {
+        existingItem.quantity++;
+      } else {
+        cart.push({
+          id: productId,
+          name: productName,
+          price: productPrice,
+          quantity: 1,
+        });
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${productName} telah ditambahkan ke keranjang!`);
+      updateCartCount();
+    }
+
+    function removeFromCart(itemId) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let existingItem = cart.find((item) => item.id === itemId);
+
+      if (existingItem && existingItem.quantity > 1) {
+        existingItem.quantity--;
+      } else {
+        cart = cart.filter((item) => item.id !== itemId);
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      loadCart();
+    }
+
+    function generateTemplate(cart, total) {
+      const template = document.getElementById("cart-template");
+      let items = "";
+
+      for (const item of cart) {
+        items += `${item.name} x 1 = RP ${item.price.toLocaleString('id-ID')}\n`;
+      }
+
+      const message = `Halo itsmyholy, saya ingin memesan:\n\n${items}\nApakah Produk Tersedia?.\nTotal: RP ${total.toLocaleString('id-ID')}\n\nTerimakasih.`;
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappLink = `https://wa.me/+6281286501752?text=${encodedMessage}`;
+      template.href = whatsappLink;
+    }
+
+    function getCartCount() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      return cart.length;
+    }
+
+    function updateCartCount() {
+      const cartCount = document.querySelector(".cart-count");
+      const count = getCartCount();
+      cartCount.textContent = count;
+      cartCount.style.display = count > 0 ? "inline" : "none";
+    }
+
+    window.addEventListener("load", () => {
+      loadCart();
+      updateCartCount();
+    });
+  </script>
+</head>
+<body>
+  <div class="bg-white">
+    <div class="mx-auto max-w-2xl px-4 pt-16 pb-24 sm:px-6 lg:max-w-7xl lg:px-8">
+      <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Keranjang Belanja</h1>
+      <div class="mt-12">
+        <div class="overflow-hidden rounded-lg bg-white shadow">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+              <tr>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Produk</th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Harga</th>
+                <th scope="col" class="relative px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 bg-white" id="cart-items"></tbody>
+          </table>
+        </div>
+        <div class="mt-6 flex justify-between">
+          <p class="text-lg font-semibold text-gray-900">Total: <span id="cart-total">RP 0</span></p>
+          <a href="#" id="cart-template" class="rounded-md bg-green-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-green-700">Pesan via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
