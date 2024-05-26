@@ -119,30 +119,30 @@ document.addEventListener('DOMContentLoaded', function() {
         slide.classList.add('staggered-animation-visible');
       }, index * 150);
     });
-  
-    // Sticky Header
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('header');
-      header.classList.toggle('sticky', window.scrollY > 0);
-    });
-  
-    // Mobile menu toggle
-    document.getElementById('menuButton').addEventListener('click', () => {
-      const mobileMenu = document.querySelector('.mobile-menu');
-      if (mobileMenu.classList.contains('hidden')) {
-        mobileMenu.classList.remove('hidden');
-        mobileMenu.classList.add('dropdown-enter', 'dropdown-enter-active');
-        setTimeout(() => {
-          mobileMenu.classList.remove('dropdown-enter', 'dropdown-enter-active');
-        }, 300);
-      } else {
-        mobileMenu.classList.add('dropdown-exit', 'dropdown-exit-active');
-        setTimeout(() => {
-          mobileMenu.classList.add('hidden');
-          mobileMenu.classList.remove('dropdown-exit', 'dropdown-exit-active');
-        }, 300);
-      }
-    });
+    
+      // Sticky Header
+      window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        header.classList.toggle('sticky', window.scrollY > 0);
+      });
+    
+      // Mobile menu toggle
+      document.getElementById('menuButton').addEventListener('click', () => {
+        const mobileMenu = document.querySelector('.mobile-menu');
+        if (mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.remove('hidden');
+          mobileMenu.classList.add('dropdown-enter', 'dropdown-enter-active');
+          setTimeout(() => {
+            mobileMenu.classList.remove('dropdown-enter', 'dropdown-enter-active');
+          }, 300);
+        } else {
+          mobileMenu.classList.add('dropdown-exit', 'dropdown-exit-active');
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('dropdown-exit', 'dropdown-exit-active');
+          }, 300);
+        }
+      });
   
     console.log('DOM fully loaded and parsed');
   });

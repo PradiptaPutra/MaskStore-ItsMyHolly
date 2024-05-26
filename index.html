@@ -14,130 +14,142 @@
 </head>
 
 <body class="bg-gray-100">
-  <!-- Header -->
-  <header class="bg-pink-300 shadow-lg rounded-2xl mb-6">
-    <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-      <div class="flex h-16 items-center justify-between">
-        <div class="md:flex md:items-center md:gap-12 shadow-md rounded-full p-2 bg-white">
-          <a class="block text-teal-600" href="index.html">
-            <span class="sr-only">Home</span>
-            <img src="img/Logo.png" alt="Logo" class="h-10 rounded-full transition-transform transform hover:scale-110" />
-          </a>
-        </div>
-        <div class="hidden md:block">
-          <nav aria-label="Global">
-            <ul class="flex items-center gap-6 text-sm">
-              <li>
-                <a class="text-white font-medium glowing" href="#" onclick="toggleDropdown(event)">
-                  Produk
-                  <svg class="h-4 w-4 inline-block ml-1 transition-transform transform hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                  </svg>
-                </a>
-                <ul id="produkDropdown" class="absolute hidden bg-white shadow-lg rounded-md mt-2">
-                  <li>
-                    <a href="/produk/detail-produk-Aloevera.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Aloevera</a>
-                  </li>
-                  <li>
-                    <a href="/produk/detail-produk-Avocado.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Avocado</a>
-                  </li>
-                  <li>
-                    <a href="/produk/detail-produk-Banana.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Banana</a>
-                  </li>
-                  <li>
-                    <a href="/produk/detail-produk-Chocolate.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Chocolate</a>
-                  </li>
-                  <li>
-                    <a href="/produk/detail-produk-Orange.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Orange</a>
-                  </li>
-                  <li>
-                    <a href="/produk/detail-produk-Strawberry.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Strawberry</a>
-                  </li>
-                  <li>
-                    <a href="/produk/detail-produk-Vanilla.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Vanilla</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a class="text-white font-medium transition hover:text-gray-500/75" href="/review.html">Review</a>
-              </li>
-              <li>
-                <a class="text-white font-medium transition hover:text-gray-500/75" href="/haircare.html">Perawatan Rambut</a>
-              </li>
-              <li>
-                <a class="text-white font-medium transition hover:text-gray-500/75" href="/artikel/artikel.html">Artikel</a>
-              </li>
-              <li>
-                <a class="bg-rose-500 bg-cover text-white transition hover:text-gray-500/75 glowing rounded-md px-4 py-2" href="https://www.instagram.com/itsmyholy/">Shop</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="flex items-center gap-4 md:hidden">
-          <button id="menuButton" class="text-white focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
-        <div class="flex items-center gap-4">
-          <a class="rounded-md bg-emerald-400 px-5 py-2.5 text-sm font-medium text-white shadow flex items-center justify-center transition-transform transform hover:scale-110" href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER_HERE">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" class="h-5 w-5 sm:mr-2" alt="WhatsApp" />
-            <span class="hidden sm:inline">WhatsApp</span>
-          </a>
-          <a class="rounded-md bg-rose-500 px-5 py-2.5 text-sm font-medium text-white flex items-center justify-center transition-transform transform hover:scale-110" href="/cart/cart.html" id="cartLink">
-            <img src="https://img.icons8.com/ios-filled/50/FBF9F1/shopping-cart.png" class="h-5 w-5 sm:mr-2" alt="Cart" />
-            <span class="hidden sm:inline">Cart</span>
-            <span class="cart-count ml-2 bg-pink-200 text-white rounded-full px-2 py-1 text-xs"></span>
-          </a>
-        </div>
+<!-- Header -->
+<header class="bg-pink-300 shadow-lg rounded-2xl mb-6">
+  <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <div class="md:flex md:items-center md:gap-12 shadow-md rounded-full p-2 bg-white">
+        <a class="block text-teal-600" href="index.html">
+          <span class="sr-only">Home</span>
+          <img src="img/Logo.png" alt="Logo" class="h-10 rounded-full transition-transform transform hover:scale-110" />
+        </a>
+      </div>
+      <div class="hidden md:block">
+        <nav aria-label="Global">
+          <ul class="flex items-center gap-6 text-sm">
+            <li>
+              <a class="text-white font-medium glowing" href="#" onclick="toggleDropdown(event)">
+                Produk
+                <svg class="h-4 w-4 inline-block ml-1 transition-transform transform hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <ul id="produkDropdown" class="absolute hidden bg-white shadow-lg rounded-md mt-2">
+                <li>
+                  <a href="/produk/detail-produk-Aloevera.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Aloevera</a>
+                </li>
+                <li>
+                  <a href="/produk/detail-produk-Avocado.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Avocado</a>
+                </li>
+                <li>
+                  <a href="/produk/detail-produk-Banana.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Banana</a>
+                </li>
+                <li>
+                  <a href="/produk/detail-produk-Chocolate.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Chocolate</a>
+                </li>
+                <li>
+                  <a href="/produk/detail-produk-Orange.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Orange</a>
+                </li>
+                <li>
+                  <a href="/produk/detail-produk-Strawberry.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Strawberry</a>
+                </li>
+                <li>
+                  <a href="/produk/detail-produk-Vanilla.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Vanilla</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a class="text-white font-medium transition hover:text-gray-500/75" href="/review.html">Review</a>
+            </li>
+            <li>
+              <a class="text-white font-medium transition hover:text-gray-500/75" href="/haircare.html">Perawatan Rambut</a>
+            </li>
+            <li>
+              <a class="text-white font-medium transition hover:text-gray-500/75" href="/artikel/artikel.html">Artikel</a>
+            </li>
+            <li>
+              <a class="bg-rose-500 bg-cover text-white transition hover:text-gray-500/75 glowing rounded-md px-4 py-2" href="https://www.instagram.com/itsmyholy/">Shop</a>
+            </li>
+            <li class="flex gap-2">
+              <a class="block text-sm text-white font-medium py-2 rounded-md bg-emerald-400 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER_HERE">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" class="h-5 w-5 sm:mr-2" alt="WhatsApp" />
+                <span>WhatsApp</span>
+              </a>
+              <a class="block text-sm text-white font-medium py-2 rounded-md bg-rose-500 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="/cart/cart.html" id="cartLink">
+                <img src="https://img.icons8.com/ios-filled/50/FBF9F1/shopping-cart.png" class="h-5 w-5 sm:mr-2" alt="Cart" />
+                <span>Cart</span>
+                <span class="cart-count ml-2 bg-pink-200 text-white rounded-full px-2 py-1 text-xs"></span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="flex items-center gap-4 md:hidden">
+        <button id="menuButton" class="text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
     </div>
-    <div class="mobile-menu hidden md:hidden bg-pink-200 shadow-lg rounded-2xl mt-6">
-      <ul class="flex flex-col items-start gap-2 p-4">
+  </div>
+  <div class="mobile-menu hidden md:hidden bg-pink-200 shadow-lg rounded-2xl mt-6">
+    <ul class="flex flex-col items-start gap-2 p-4">
+      <li>
+        <a href="#" class="block text-sm text-white font-medium py-2" onclick="toggleDropdown(event)">Produk</a>
+      </li>
+      <ul id="produkDropdownMobile" class="hidden bg-white shadow-lg rounded-md ml-4">
         <li>
-          <a href="#" class="block text-sm text-white font-medium py-2" onclick="toggleDropdown(event)">Produk</a>
-        </li>
-        <ul id="produkDropdownMobile" class="hidden bg-white shadow-lg rounded-md ml-4">
-          <li>
-            <a href="/produk/detail-produk-Aloevera.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Aloevera</a>
-          </li>
-          <li>
-            <a href="/produk/detail-produk-Avocado.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Avocado</a>
-          </li>
-          <li>
-            <a href="/produk/detail-produk-Banana.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Banana</a>
-          </li>
-          <li>
-            <a href="/produk/detail-produk-Chocolate.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Chocolate</a>
-          </li>
-          <li>
-            <a href="/produk/detail-produk-Orange.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Orange</a>
-          </li>
-          <li>
-            <a href="/produk/detail-produk-Strawberry.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Strawberry</a>
-          </li>
-          <li>
-            <a href="/produk/detail-produk-Vanilla.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Vanilla</a>
-          </li>
-        </ul>
-        <li>
-          <a href="/review.html" class="block text-sm text-white font-medium py-2">Review</a>
-        </li>
-        
-        <li>
-          <a href="/haircare.html" class="block text-sm text-white font-medium py-2">Perawatan Rambut</a>
+          <a href="/produk/detail-produk-Aloevera.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Aloevera</a>
         </li>
         <li>
-          <a href="/artikel/artikel.html" class="block text-sm text-white font-medium py-2">Artikel</a>
+          <a href="/produk/detail-produk-Avocado.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Avocado</a>
         </li>
         <li>
-          <a href="https://www.instagram.com/itsmyholy/" class="block text-sm text-white font-medium py-2">Shop</a>
+          <a href="/produk/detail-produk-Banana.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Banana</a>
+        </li>
+        <li>
+          <a href="/produk/detail-produk-Chocolate.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Chocolate</a>
+        </li>
+        <li>
+          <a href="/produk/detail-produk-Orange.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Orange</a>
+        </li>
+        <li>
+          <a href="/produk/detail-produk-Strawberry.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Strawberry</a>
+        </li>
+        <li>
+          <a href="/produk/detail-produk-Vanilla.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Vanilla</a>
         </li>
       </ul>
-    </div>
-  </header>
-  <!-- Header -->
+      <li>
+        <a href="/review.html" class="block text-sm text-white font-medium py-2">Review</a>
+      </li>
+      <li>
+        <a href="/haircare.html" class="block text-sm text-white font-medium py-2">Perawatan Rambut</a>
+      </li>
+      <li>
+        <a href="/artikel/artikel.html" class="block text-sm text-white font-medium py-2">Artikel</a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/itsmyholy/" class="block text-sm text-white font-medium py-2">Shop</a>
+      </li>
+      <li class="flex gap-2">
+        <a class="block text-sm text-white font-medium py-2 rounded-md bg-emerald-400 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER_HERE">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" class="h-5 w-5 sm:mr-2" alt="WhatsApp" />
+          <span>WhatsApp</span>
+        </a>
+        <a class="block text-sm text-white font-medium py-2 rounded-md bg-rose-500 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="/cart/cart.html" id="cartLink">
+          <img src="https://img.icons8.com/ios-filled/50/FBF9F1/shopping-cart.png" class="h-5 w-5 sm:mr-2" alt="Cart" />
+          <span>Cart</span>
+          <span class="cart-count ml-2 bg-pink-200 text-white rounded-full px-2 py-1 text-xs"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+<!-- Header -->
+
+
 
 <!-- Slider -->
 <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 mt-4 relative">
@@ -473,62 +485,62 @@
         </div>
       </article>
 
-      <!-- Post 2 - Video -->
-      <article
-        class="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg flex-1"
-      >
-        <div class="relative">
-          <iframe
-            class="w-full h-48 rounded-t-lg"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div
-          class="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 p-4 sm:p-6"
-        >
-          <time datetime="2022-10-11" class="block text-xs text-white/90"
-            >11th Oct 2022</time
-          >
-          <a href="#" class="text-white">
-            <h3 class="mt-0.5 text-lg font-bold">
-              Introduction to AI: Understanding the Basics
-            </h3>
-          </a>
-          <p class="mt-2 line-clamp-3 text-sm/relaxed text-white/95">
-            Watch this video to learn about the fundamentals of Artificial
-            Intelligence and its applications in various fields.
-          </p>
-        </div>
-      </article>
-
-      <!-- Post 3 - Image -->
+      <!-- Post 1 - Image -->
       <article
         class="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg flex-1"
       >
         <img
           alt=""
-          src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+          src="/img/IG.png"
           class="w-full h-48 object-cover rounded-t-lg"
         />
         <div
           class="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 p-4 sm:p-6"
         >
           <time datetime="2022-10-10" class="block text-xs text-white/90"
-            >10th Oct 2022</time
+            >2024</time
           >
           <a href="#" class="text-white">
             <h3 class="mt-0.5 text-lg font-bold">
-              How to position your furniture for positivity
+              IG itsmyholy
             </h3>
           </a>
           <p class="mt-2 line-clamp-3 text-sm/relaxed text-white/95">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-            dolores, possimus pariatur animi temporibus nesciunt praesentium
-            dolore sed nulla ipsum eveniet corporis quidem, mollitia itaque
-            minus soluta, voluptates neque explicabo tempora nisi culpa eius
-            atque dignissimos. Molestias explicabo corporis voluptatem?
+            HAIR MASK by IT'S MY HOLY
+            Perfumed Hair Mask
+            (formulated to damage hair)
+            Long lasting Fragrance ♡
+            Cek Sekarang !
+          </p>
+        </div>
+      </article>
+
+      <!-- Post 1 - Image -->
+      <article
+        class="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg flex-1"
+      >
+        <img
+          alt=""
+          src="/img/IG.png"
+          class="w-full h-48 object-cover rounded-t-lg"
+        />
+        <div
+          class="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 p-4 sm:p-6"
+        >
+          <time datetime="2022-10-10" class="block text-xs text-white/90"
+            >2024</time
+          >
+          <a href="#" class="text-white">
+            <h3 class="mt-0.5 text-lg font-bold">
+              IG itsmyholy
+            </h3>
+          </a>
+          <p class="mt-2 line-clamp-3 text-sm/relaxed text-white/95">
+            HAIR MASK by IT'S MY HOLY
+            Perfumed Hair Mask
+            (formulated to damage hair)
+            Long lasting Fragrance ♡
+            Cek Sekarang !
           </p>
         </div>
       </article>
