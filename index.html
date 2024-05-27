@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        <link rel="icon" href="/img/Logo.png">
-        <link rel="stylesheet" href="styles.css" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- Google Fonts -->
-        <script src="app.js" defer></script> <!-- Added defer attribute -->
-      
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="icon" href="/img/Logo.png">
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="app.js" defer></script>
+
     <style>
         .product-img {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -69,11 +69,28 @@
             width: 300px;
             height: 300px;
         }
+
+        body {
+            background-color: #f3f4f6;
+        }
+
+        .blur-on-scroll {
+            transition: filter 0.3s ease-in-out;
+        }
+
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body class="bg-gray-100">
 <!-- Header -->
-<header class="bg-pink-300 shadow-lg rounded-2xl mb-6">
+<header class="bg-pink-300 shadow-lg rounded-2xl mb-6 blur-on-scroll">
     <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
             <div class="md:flex md:items-center md:gap-12 shadow-md rounded-full p-2 bg-white">
@@ -339,83 +356,90 @@
 <!-- Produk Yang Tepat -->
 
 <!-- Produk Terlaris -->
-<section class="my-8">
-    <h2 class="text-center text-2xl font-bold mb-8">Produk Terlaris</h2>
+<section class="my-16 py-16">
+    <h2 class="text-center text-3xl font-bold text-gray-900 mb-12">Produk Terlaris</h2>
     <div class="swiper-container mx-auto max-w-screen-xl">
         <div class="swiper-wrapper">
             <div class="swiper-slide staggered-animation">
                 <a href="/produk/detail-produk-Chocolate.html" class="group block overflow-hidden relative">
-                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105">
-                        <img src="img/Produk1.png" alt="Produk 1" class="product-image w-full h-64 object-cover transition duration-500 hover:scale-110" />
-                        <div class="sale-badge">Sale</div>
-                        <div class="product-details p-4">
-                            <h3 class="product-title text-lg font-semibold">Chocolate</h3>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+                        <img src="img/Produk1.png" alt="Produk 1" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                        <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
+                        <div class="product-details p-4 text-center">
+                            <h3 class="product-title text-lg font-semibold text-gray-800">Chocolate</h3>
+                            <p class="text-sm text-gray-600 mt-1">Delicious and creamy</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="swiper-slide staggered-animation">
                 <a href="/produk/detail-produk-Vanilla.html" class="group block overflow-hidden relative">
-                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105">
-                        <img src="img/Produk2.png" alt="Produk 2" class="product-image w-full h-64 object-cover transition duration-500 hover:scale-110" />
-                        <div class="sale-badge">Sale</div>
-                        <div class="product-details p-4">
-                            <h3 class="product-title text-lg font-semibold">Vanilla</h3>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+                        <img src="img/Produk2.png" alt="Produk 2" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                        <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
+                        <div class="product-details p-4 text-center">
+                            <h3 class="product-title text-lg font-semibold text-gray-800">Vanilla</h3>
+                            <p class="text-sm text-gray-600 mt-1">Smooth and fragrant</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="swiper-slide staggered-animation">
                 <a href="/produk/detail-produk-Aloevera.html" class="group block overflow-hidden relative">
-                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105">
-                        <img src="img/Produk3.png" alt="Produk 3" class="product-image w-full h-64 object-cover transition duration-500 hover:scale-110" />
-                        <div class="sale-badge">Sale</div>
-                        <div class="product-details p-4">
-                            <h3 class="product-title text-lg font-semibold">Aloevera</h3>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+                        <img src="img/Produk3.png" alt="Produk 3" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                        <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
+                        <div class="product-details p-4 text-center">
+                            <h3 class="product-title text-lg font-semibold text-gray-800">Aloevera</h3>
+                            <p class="text-sm text-gray-600 mt-1">Refreshing and soothing</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="swiper-slide staggered-animation">
                 <a href="/produk/detail-produk-Orange.html" class="group block overflow-hidden relative">
-                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105">
-                        <img src="img/Produk4.png" alt="Produk 4" class="product-image w-full h-64 object-cover transition duration-500 hover:scale-110" />
-                        <div class="sale-badge">Sale</div>
-                        <div class="product-details p-4">
-                            <h3 class="product-title text-lg font-semibold">Orange</h3>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+                        <img src="img/Produk4.png" alt="Produk 4" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                        <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
+                        <div class="product-details p-4 text-center">
+                            <h3 class="product-title text-lg font-semibold text-gray-800">Orange</h3>
+                            <p class="text-sm text-gray-600 mt-1">Zesty and vibrant</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="swiper-slide staggered-animation">
                 <a href="/produk/detail-produk-Banana.html" class="group block overflow-hidden relative">
-                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105">
-                        <img src="img/Produk5.png" alt="Produk 5" class="product-image w-full h-64 object-cover transition duration-500 hover:scale-110" />
-                        <div class="sale-badge">Sale</div>
-                        <div class="product-details p-4">
-                            <h3 class="product-title text-lg font-semibold">Banana</h3>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+                        <img src="img/Produk5.png" alt="Produk 5" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                        <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
+                        <div class="product-details p-4 text-center">
+                            <h3 class="product-title text-lg font-semibold text-gray-800">Banana</h3>
+                            <p class="text-sm text-gray-600 mt-1">Sweet and creamy</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="swiper-slide staggered-animation">
                 <a href="/produk/detail-produk-Avocado.html" class="group block overflow-hidden relative">
-                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105">
-                        <img src="img/Produk6.png" alt="Produk 6" class="product-image w-full h-64 object-cover transition duration-500 hover:scale-110" />
-                        <div class="sale-badge">Sale</div>
-                        <div class="product-details p-4">
-                            <h3 class="product-title text-lg font-semibold">Avocado</h3>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+                        <img src="img/Produk6.png" alt="Produk 6" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                        <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
+                        <div class="product-details p-4 text-center">
+                            <h3 class="product-title text-lg font-semibold text-gray-800">Avocado</h3>
+                            <p class="text-sm text-gray-600 mt-1">Rich and creamy</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="swiper-slide staggered-animation">
                 <a href="/produk/detail-produk-Strawberry.html" class="group block overflow-hidden relative">
-                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105">
-                        <img src="img/Produk7.png" alt="Produk 7" class="product-image w-full h-64 object-cover transition duration-500 hover:scale-110" />
-                        <div class="sale-badge">Sale</div>
-                        <div class="product-details p-4">
-                            <h3 class="product-title text-lg font-semibold">Strawberry</h3>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+                        <img src="img/Produk7.png" alt="Produk 7" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                        <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
+                        <div class="product-details p-4 text-center">
+                            <h3 class="product-title text-lg font-semibold text-gray-800">Strawberry</h3>
+                            <p class="text-sm text-gray-600 mt-1">Fresh and sweet</p>
                         </div>
                     </div>
                 </a>
@@ -428,39 +452,40 @@
 <!-- Produk Terlaris -->
 
 <!-- Social Media Section -->
-<section class="bg-gray-50 p-4 lg:p-8 flex flex-col md:flex-row gap-4">
-    <h1 class="lg:text-3xl font-bold text-gray-900 text-center mt-6">Social Media</h1>
-
-    <article class="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg flex-1">
-        <img alt="" src="/img/IG.png" class="w-full h-48 object-cover rounded-t-lg" />
-        <div class="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 p-4 sm:p-6">
-            <time datetime="2022-10-10" class="block text-xs text-white/90">2024</time>
-            <a href="#" class="text-white">
-                <h3 class="mt-0.5 text-lg font-bold">IG itsmyholy</h3>
-            </a>
-            <p class="mt-2 line-clamp-3 text-sm/relaxed text-white/95">HAIR MASK by IT'S MY HOLY Perfumed Hair Mask (formulated to damage hair) Long lasting Fragrance ♡ Cek Sekarang !</p>
-        </div>
-    </article>
-    <article class="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg flex-1">
-        <img alt="" src="/img/IG.png" class="w-full h-48 object-cover rounded-t-lg" />
-        <div class="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 p-4 sm:p-6">
-            <time datetime="2022-10-10" class="block text-xs text-white/90">2024</time>
-            <a href="#" class="text-white">
-                <h3 class="mt-0.5 text-lg font-bold">IG itsmyholy</h3>
-            </a>
-            <p class="mt-2 line-clamp-3 text-sm/relaxed text-white/95">HAIR MASK by IT'S MY HOLY Perfumed Hair Mask (formulated to damage hair) Long lasting Fragrance ♡ Cek Sekarang !</p>
-        </div>
-    </article>
-    <article class="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg flex-1">
-        <img alt="" src="/img/IG.png" class="w-full h-48 object-cover rounded-t-lg" />
-        <div class="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 p-4 sm:p-6">
-            <time datetime="2022-10-10" class="block text-xs text-white/90">2024</time>
-            <a href="#" class="text-white">
-                <h3 class="mt-0.5 text-lg font-bold">IG itsmyholy</h3>
-            </a>
-            <p class="mt-2 line-clamp-3 text-sm/relaxed text-white/95">HAIR MASK by IT'S MY HOLY Perfumed Hair Mask (formulated to damage hair) Long lasting Fragrance ♡ Cek Sekarang !</p>
-        </div>
-    </article>
+<section class="bg-gray-50 p-8 space-y-8">
+    <h1 class="text-3xl font-bold text-gray-900 text-center">Social Media</h1>
+    <div class="flex flex-wrap justify-center gap-8">
+        <a href="https://www.instagram.com/itsmyholy" class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4">
+            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <img src="/img/IG.png" alt="Social Media Image" class="w-full h-56 object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent p-6 flex flex-col justify-end">
+                    <h3 class="text-lg font-bold text-white">IG itsmyholy</h3>
+                    <time datetime="2024" class="text-xs text-gray-200">2024</time>
+                    <p class="mt-2 text-sm text-white line-clamp-3">HAIR MASK by IT'S MY HOLY Perfumed Hair Mask (formulated to damage hair) Long lasting Fragrance ♡ Cek Sekarang!</p>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.instagram.com/itsmyholy" class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4">
+            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <img src="/img/IG.png" alt="Social Media Image" class="w-full h-56 object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent p-6 flex flex-col justify-end">
+                    <h3 class="text-lg font-bold text-white">IG itsmyholy</h3>
+                    <time datetime="2024" class="text-xs text-gray-200">2024</time>
+                    <p class="mt-2 text-sm text-white line-clamp-3">HAIR MASK by IT'S MY HOLY Perfumed Hair Mask (formulated to damage hair) Long lasting Fragrance ♡ Cek Sekarang!</p>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.instagram.com/itsmyholy" class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4">
+            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <img src="/img/IG.png" alt="Social Media Image" class="w-full h-56 object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent p-6 flex flex-col justify-end">
+                    <h3 class="text-lg font-bold text-white">IG itsmyholy</h3>
+                    <time datetime="2024" class="text-xs text-gray-200">2024</time>
+                    <p class="mt-2 text-sm text-white line-clamp-3">HAIR MASK by IT'S MY HOLY Perfumed Hair Mask (formulated to damage hair) Long lasting Fragrance ♡ Cek Sekarang!</p>
+                </div>
+            </div>
+        </a>
+    </div>
 </section>
 <!-- End of Social Media Section -->
 
@@ -504,143 +529,6 @@
     </div>
 </footer>
 <!-- Footer -->
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        console.log("app.js is loaded");
-
-        let currentSlide = 0;
-        const slides = document.querySelectorAll(".slider-image");
-        const dots = document.querySelectorAll(".slider-dot");
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.toggle("opacity-100", i === index);
-                slide.classList.toggle("opacity-0", i !== index);
-            });
-            dots.forEach((dot, i) => {
-                dot.classList.toggle("opacity-50", i !== index);
-                dot.classList.toggle("opacity-100", i === index);
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        function goToSlide(index) {
-            currentSlide = index;
-            showSlide(currentSlide);
-        }
-
-        document.querySelector(".next-btn").addEventListener("click", nextSlide);
-        document.querySelector(".prev-btn").addEventListener("click", prevSlide);
-        setInterval(nextSlide, 3000);
-        showSlide(currentSlide);
-
-        function toggleDropdown(event) {
-            event.preventDefault();
-            const dropdown = event.target.closest("li").querySelector("ul");
-            if (dropdown.classList.contains("hidden")) {
-                dropdown.classList.remove("hidden", "dropdown-exit-active");
-                dropdown.classList.add("dropdown-enter", "dropdown-enter-active");
-                setTimeout(() => {
-                    dropdown.classList.remove("dropdown-enter", "dropdown-enter-active");
-                }, 300);
-            } else {
-                dropdown.classList.add("dropdown-exit", "dropdown-exit-active");
-                setTimeout(() => {
-                    dropdown.classList.add("hidden");
-                    dropdown.classList.remove("dropdown-exit", "dropdown-exit-active");
-                }, 300);
-            }
-        }
-
-        window.toggleDropdown = toggleDropdown;
-
-        function getCartCount() {
-            const cart = JSON.parse(localStorage.getItem("cart")) || [];
-            return cart.length;
-        }
-
-        function updateCartCount() {
-            const cartCount = document.querySelector(".cart-count");
-            const count = getCartCount();
-            cartCount.textContent = count;
-            cartCount.style.display = count > 0 ? "inline" : "none";
-        }
-
-        window.addEventListener("load", updateCartCount);
-
-        function addToCart(productId, productName, productPrice) {
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            cart.push({ id: productId, name: productName, price: productPrice });
-            localStorage.setItem("cart", JSON.stringify(cart));
-            alert(`${productName} telah ditambahkan ke keranjang!`);
-            updateCartCount();
-        }
-
-        const swiper = new Swiper(".swiper-container", {
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            slidesPerView: 1,
-            spaceBetween: 20,
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                },
-                1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 40,
-                },
-            },
-        });
-
-        const slidesToAnimate = document.querySelectorAll(".swiper-slide");
-        slidesToAnimate.forEach((slide, index) => {
-            setTimeout(() => {
-                slide.classList.add("staggered-animation-visible");
-            }, index * 150);
-        });
-
-        window.addEventListener("scroll", function () {
-            const header = document.querySelector("header");
-            header.classList.toggle("sticky", window.scrollY > 0);
-        });
-
-        document.getElementById("menuButton").addEventListener("click", () => {
-            const mobileMenu = document.querySelector(".mobile-menu");
-            if (mobileMenu.classList.contains("hidden")) {
-                mobileMenu.classList.remove("hidden");
-                mobileMenu.classList.add("dropdown-enter", "dropdown-enter-active");
-                setTimeout(() => {
-                    mobileMenu.classList.remove("dropdown-enter", "dropdown-enter-active");
-                }, 300);
-            } else {
-                mobileMenu.classList.add("dropdown-exit", "dropdown-exit-active");
-                setTimeout(() => {
-                    mobileMenu.classList.add("hidden");
-                    mobileMenu.classList.remove("dropdown-exit", "dropdown-exit-active");
-                }, 300);
-            }
-        });
-
-        console.log("DOM fully loaded and parsed");
-    });
-</script>
 
 </body>
 </html>

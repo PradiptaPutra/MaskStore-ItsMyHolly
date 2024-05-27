@@ -50,6 +50,21 @@
         text-decoration: none;
         cursor: pointer;
       }
+      .star {
+        font-size: 1.5rem;
+        color: #ccc; /* Grey by default */
+        cursor: pointer;
+      }
+      .star.selected {
+        color: #ffd700; /* Yellow when selected */
+      }
+
+      .star:not(.selected) {
+        color: #ccc;
+    }
+
+
+
     </style>
   </head>
   <body class="bg-gray-100">
@@ -352,100 +367,104 @@
     </header>
     <!-- Header -->
 
-    <!-- Main Content -->
-    <main class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-8">
-      <h1 class="text-3xl font-bold mb-6 text-center">Ulasan Produk</h1>
-      <div class="flex justify-center mb-6">
+<!-- Main Content -->
+<main class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-8">
+  <h1 class="text-3xl font-bold mb-6 text-center">Ulasan Produk</h1>
+  <div class="flex justify-center mb-6">
+    <button
+      id="add-review-btn"
+      class="bg-rose-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+    >
+      Tambahkan Ulasan
+    </button>
+  </div>
+
+  <div
+    id="reviews"
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+  ></div>
+</main>
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content mx-auto bg-white rounded-lg shadow-lg p-8">
+    <span class="close">&times;</span>
+    <h2 class="text-2xl font-bold mb-4">Tambahkan Ulasan</h2>
+    <!-- Formulir untuk menambahkan ulasan -->
+    <form
+      id="review-form"
+      class="mt-4"
+      enctype="multipart/form-data"
+      method="POST"
+    >
+      <div class="flex flex-col space-y-4">
+        <label for="productName" class="text-lg font-semibold text-gray-800">Product Name:</label>
+        <input
+          type="text"
+          id="productName"
+          name="productName"
+          placeholder="Enter product name"
+          required
+          class="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+        />
+      </div>
+      <div class="flex flex-col space-y-4">
+        <label for="username" class="text-lg font-semibold text-gray-800">Username:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter your username"
+          required
+          class="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+        />
+      </div>
+      <div class="flex flex-col space-y-4">
+        <label for="comment" class="text-lg font-semibold text-gray-800">Comment:</label>
+        <textarea
+          id="comment"
+          name="comment"
+          rows="4"
+          placeholder="Enter your comment"
+          required
+          class="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+        ></textarea>
+      </div>
+      <div class="flex flex-col space-y-4">
+        <label for="rating" class="text-lg font-semibold text-gray-800">Rating:</label>
+        <div class="flex space-x-1">
+          <span class="star" data-value="1">&#9733;</span>
+          <span class="star" data-value="2">&#9733;</span>
+          <span class="star" data-value="3">&#9733;</span>
+          <span class="star" data-value="4">&#9733;</span>
+          <span class="star" data-value="5">&#9733;</span>
+          <input type="hidden" id="rating" name="rating" value="1">
+        </div>
+      </div>
+      <div class="flex flex-col space-y-4">
+        <label for="image" class="text-lg font-semibold text-gray-800">Upload Image:</label>
+        <input
+          type="file"
+          id="image"
+          name="image"
+          accept="image/*"
+          required
+          class="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+        />
+      </div>
+      <div class="flex justify-end mt-6">
         <button
-          id="add-review-btn"
-          class="bg-rose-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+          type="submit"
+          class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
         >
-          Tambahkan Ulasan
+          Add Review
         </button>
       </div>
+    </form>
+  </div>
+</div>
+<!-- Modal -->
 
-      <div
-        id="reviews"
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-      ></div>
-    </main>
-
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-      <div class="modal-content mx-auto bg-white rounded-lg shadow-lg p-8">
-        <span class="close">&times;</span>
-        <h2 class="text-2xl font-bold mb-4">Tambahkan Ulasan</h2>
-        <!-- Formulir untuk menambahkan ulasan -->
-        <form
-          id="review-form"
-          class="mt-4"
-          enctype="multipart/form-data"
-          method="POST"
-        >
-          <div class="flex flex-col space-y-4">
-            <label for="productName" class="text-lg font-semibold text-gray-800"
-              >Product Name:</label
-            >
-            <input
-              type="text"
-              id="productName"
-              name="productName"
-              placeholder="Enter product name"
-              required
-              class="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-            />
-          </div>
-          <div class="flex flex-col space-y-4">
-            <label for="username" class="text-lg font-semibold text-gray-800"
-              >Username:</label
-            >
-            <input
-              type="text"
-              id="username"
-              name="username"
-              placeholder="Enter your username"
-              required
-              class="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-            />
-          </div>
-          <div class="flex flex-col space-y-4">
-            <label for="comment" class="text-lg font-semibold text-gray-800"
-              >Comment:</label
-            >
-            <textarea
-              id="comment"
-              name="comment"
-              rows="4"
-              placeholder="Enter your comment"
-              required
-              class="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-            ></textarea>
-          </div>
-          <div class="flex flex-col space-y-4">
-            <label for="image" class="text-lg font-semibold text-gray-800"
-              >Upload Image:</label
-            >
-            <input
-              type="file"
-              id="image"
-              name="image"
-              accept="image/*"
-              required
-              class="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-            />
-          </div>
-          <div class="flex justify-end mt-6">
-            <button
-              type="submit"
-              class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
-            >
-              Add Review
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <!-- Modal -->
 
     <!-- Footer -->
     <footer class="bg-pink-300">
