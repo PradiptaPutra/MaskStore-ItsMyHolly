@@ -1,137 +1,95 @@
-// Render carousel artikel terbaru
-const swiperWrapper = document.querySelector(".swiper-wrapper");
-articles.forEach((article) => {
-  const slide = document.createElement("div");
-  slide.className = "swiper-slide";
-  slide.innerHTML = `
-    <a href="/artikel/${article.id}">
-      <img src="${article.image}" alt="${article.title}">
-    </a>
-  `;
-  swiperWrapper.appendChild(slide);
-});
+    // Data artikel
+    const articles = [
+        {
+            id: 1,
+            title: 'Tips Mengatasi Rambut Rontok dengan Bahan Alami',
+            description: 'Deskripsi singkat artikel pertama',
+            image: '/img/woman-getting-hair-loss-treatment-clinic.png',
+            url: 'https://www.halodoc.com/artikel/12-cara-mengobati-rambut-rontok-secara-alami'
+        },
+        {
+            id: 2,
+            title: 'Cara Ampuh Menghilangkan Ketombe dengan Cepat',
+            description: 'Deskripsi singkat artikel kedua',
+            image: '/img/woman-giving-herself-scalp-massage.png',
+            url: 'https://www.alodokter.com/berbagai-cara-alami-menghilangkan-ketombe'
+        },
+        {
+            id: 3,
+            title: 'Tips Merawat Rambut Patah dan Bercabang',
+            description: 'Deskripsi singkat artikel ketiga',
+            image: '/img/young-beautiful-angry-crazy-brunette-businessgirl-clutching-her-head-screaming-looking-away-white-wall.png',
+            url: 'https://www.alodokter.com/Cara-Mengatasi-Rambut-Bercabang-Ada-di-Sini'
+        },
+    ];
 
-// Render card artikel
-const cardContainer = document.querySelector(".grid");
-articles.forEach((article) => {
-  const card = document.createElement("div");
-  card.className = "bg-white rounded-lg shadow-md overflow-hidden";
-  card.innerHTML = `
-    <a href="/artikel/${article.id}">
-      <img src="${article.image}" alt="${article.title}" class="w-full h-48 object-cover">
-      <div class="p-4">
-        <h3 class="text-xl font-semibold text-gray-900">${article.title}</h3>
-        <p class="mt-2 text-gray-600">${article.description}</p>
-      </div>
-    </a>
-  `;
-  cardContainer.appendChild(card);
-});
-// JavaScript for slider functionality
-let currentSlide = 0;
-const slides = document.querySelectorAll(".bg-gray-200 img");
+    // Render card artikel
+    window.addEventListener('load', function () {
+        const cardContainer = document.querySelector('.grid');
+        articles.forEach(article => {
+            const card = document.createElement('div');
+            card.className = 'bg-white rounded-lg shadow-md overflow-hidden';
+            card.innerHTML = `
+                <a href="${article.url}" target="_blank">
+                    <img src="${article.image}" alt="${article.title}" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold text-gray-900">${article.title}</h3>
+                        <p class="mt-2 text-gray-600">${article.description}</p>
+                    </div>
+                </a>
+            `;
+            cardContainer.appendChild(card);
+        });
+    });
 
-// Function to show next slide
-function nextSlide() {
-  slides[currentSlide].style.opacity = 0;
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].style.opacity = 1;
-}
+    // Function to toggle dropdown menu
+    function toggleDropdown(event) {
+        event.preventDefault();
+        const dropdown = document.getElementById('produkDropdown');
+        dropdown.classList.toggle('hidden');
+    }
 
-// Function to show previous slide
-function prevSlide() {
-  slides[currentSlide].style.opacity = 0;
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  slides[currentSlide].style.opacity = 1;
-}
+    // Fungsi untuk mendapatkan jumlah item di keranjang
+    function getCartCount() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        return cart.length;
+    }
 
-// Automatically change slide every 5 seconds
-setInterval(nextSlide, 5000);
+    // Fungsi untuk memperbarui tampilan jumlah item di keranjang
+    function updateCartCount() {
+        const cartCountElements = document.querySelectorAll('.cart-count');
+        const count = getCartCount();
+        cartCountElements.forEach(element => {
+            element.textContent = count;
+            element.style.display = count > 0 ? 'inline' : 'none';
+        });
+    }
 
-// Function to toggle dropdown menu
-function toggleDropdown(event) {
-  event.preventDefault();
-  const dropdown = document.getElementById("produkDropdown");
-  dropdown.classList.toggle("hidden");
-}
-// Fungsi untuk mendapatkan jumlah item di keranjang
-function getCartCount() {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  return cart.length;
-}
+    // Memperbarui tampilan jumlah item di keranjang saat halaman dimuat
+    window.addEventListener('load', updateCartCount);
 
-// Fungsi untuk memperbarui tampilan jumlah item di keranjang
-function updateCartCount() {
-  const cartCount = document.querySelector(".cart-count");
-  const count = getCartCount();
-  cartCount.textContent = count;
-  cartCount.style.display = count > 0 ? "inline" : "none";
-}
+    // Memperbarui tampilan jumlah item di keranjang setelah menambahkan barang ke keranjang
+    function addToCart(productId, productName, productPrice) {
+        // Mendapatkan data keranjang dari localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Memperbarui tampilan jumlah item di keranjang saat halaman dimuat
-window.addEventListener("load", updateCartCount);
+        // Menambahkan item baru ke keranjang
+        cart.push({ id: productId, name: productName, price: productPrice });
 
-// Memperbarui tampilan jumlah item di keranjang setelah menambahkan barang ke keranjang
-function addToCart(productId, productName, productPrice) {
-  // Mendapatkan data keranjang dari localStorage
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        // Menyimpan data keranjang ke localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
 
-  // Menambahkan item baru ke keranjang
-  cart.push({ id: productId, name: productName, price: productPrice });
+        // Menampilkan pesan sukses
+        alert(`${productName} telah ditambahkan ke keranjang!`);
 
-  // Menyimpan data keranjang ke localStorage
-  localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCount();
+    }
 
-  // Menampilkan pesan sukses
-  alert(`${productName} telah ditambahkan ke keranjang!`);
+    // Mobile menu toggle
+    document.getElementById('menuButton').addEventListener('click', () => {
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
 
-  updateCartCount();
-}
-
-// Data artikel
-const articles = [
-  {
-    id: 1,
-    title: "Artikel Pertama",
-    description: "Deskripsi singkat artikel pertama",
-    image: "https://via.placeholder.com/600x400",
-  },
-  // Tambahkan data artikel lainnya di sini
-  {
-    id: 2,
-    title: "Artikel Kedua",
-    description: "Deskripsi singkat artikel kedua",
-    image: "https://via.placeholder.com/600x400",
-  },
-  {
-    id: 3,
-    title: "Artikel Ketiga",
-    description: "Deskripsi singkat artikel ketiga",
-    image: "https://via.placeholder.com/600x400",
-  },
-];
-
-// Inisialisasi Swiper untuk carousel artikel terbaru
-window.addEventListener("load", function () {
-  new Swiper(".swiper", {
-    spaceBetween: 30,
-    centeredSlides: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-});
-// Sticky Header
-window.addEventListener("scroll", function () {
-  const header = document.querySelector("header");
-  header.classList.toggle("sticky", window.scrollY > 0);
-});
+    document.getElementById('cartLink').addEventListener('click', updateCartCount);
+    document.getElementById('mobileCartLink').addEventListener('click', updateCartCount);

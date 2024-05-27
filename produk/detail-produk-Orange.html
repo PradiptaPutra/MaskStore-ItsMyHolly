@@ -7,56 +7,16 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" href="/img/Logo.png">
   <link rel="stylesheet" href="styles.css" />
-  <script src="/app.js"></script>
-
-  <script>
-    // Function to toggle dropdown menu
-    function toggleDropdown(event) {
-      event.preventDefault();
-      const dropdown = document.getElementById("produkDropdown");
-      dropdown.classList.toggle("hidden");
+  <script src="produk.js"></script>
+  <style>
+    header.sticky {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
+  </style>
 
-    // Fungsi untuk mendapatkan jumlah item di keranjang
-    function getCartCount() {
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      return cart.length;
-    }
-
-    // Fungsi untuk memperbarui tampilan jumlah item di keranjang
-    function updateCartCount() {
-      const cartCount = document.querySelector(".cart-count");
-      const count = getCartCount();
-      cartCount.textContent = count;
-      cartCount.style.display = count > 0 ? "inline" : "none";
-    }
-
-    // Memperbarui tampilan jumlah item di keranjang saat halaman dimuat
-    window.addEventListener("load", updateCartCount);
-
-    // Memperbarui tampilan jumlah item di keranjang setelah menambahkan barang ke keranjang
-    function addToCart() {
-      // Retrieve product details from the DOM
-      const productName = document.querySelector(".product-name").textContent;
-      const productPrice = parseFloat(
-        document.querySelector(".product-price").textContent.replace(/RP|\.|,/g, '')
-      );
-
-      // Mendapatkan data keranjang dari localStorage
-      let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-      // Menambahkan item baru ke keranjang
-      cart.push({ name: productName, price: productPrice });
-
-      // Menyimpan data keranjang ke localStorage
-      localStorage.setItem("cart", JSON.stringify(cart));
-
-      // Menampilkan pesan sukses
-      alert(`${productName} telah ditambahkan ke keranjang!`);
-
-      updateCartCount();
-    }
-  </script>
 </head>
 <body>
 <!-- Header -->
@@ -73,7 +33,7 @@
         <nav aria-label="Global">
           <ul class="flex items-center gap-6 text-sm">
             <li>
-              <a class="text-white font-medium glowing" href="#" onclick="toggleDropdown(event)">
+              <a class="text-white font-medium glowing" href="#" data-toggle="produk" data-target="produkDropdown">
                 Produk
                 <svg class="h-4 w-4 inline-block ml-1 transition-transform transform hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -138,10 +98,10 @@
       </div>
     </div>
   </div>
-  <div class="mobile-menu hidden md:hidden bg-pink-200 shadow-lg rounded-2xl mt-6">
+  <div id="mobileMenu" class="mobile-menu hidden md:hidden bg-pink-200 shadow-lg rounded-2xl mt-6">
     <ul class="flex flex-col items-start gap-2 p-4">
       <li>
-        <a href="#" class="block text-sm text-white font-medium py-2" onclick="toggleDropdown(event)">Produk</a>
+        <a href="#" class="block text-sm text-white font-medium py-2" data-toggle="produk" data-target="produkDropdownMobile">Produk</a>
       </li>
       <ul id="produkDropdownMobile" class="hidden bg-white shadow-lg rounded-md ml-4">
         <li>
@@ -191,6 +151,7 @@
       </li>
     </ul>
   </div>
+  
 </header>
 <!-- Header -->
 

@@ -11,7 +11,7 @@
     <link rel="icon" href="/img/Logo.png" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="styles.css" />
-    <script src="app.js" defer></script>
+    <script src="review.js" defer></script>
     <style>
       .review-card {
         transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -175,14 +175,31 @@
                   >
                 </li>
                 <li class="flex gap-2">
-                  <a class="block text-sm text-white font-medium py-2 rounded-md bg-emerald-400 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER_HERE">
-                    <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" class="h-5 w-5 sm:mr-2" alt="WhatsApp" />
+                  <a
+                    class="block text-sm text-white font-medium py-2 rounded-md bg-emerald-400 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110"
+                    href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER_HERE"
+                  >
+                    <img
+                      src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png"
+                      class="h-5 w-5 sm:mr-2"
+                      alt="WhatsApp"
+                    />
                     <span>WhatsApp</span>
                   </a>
-                  <a class="block text-sm text-white font-medium py-2 rounded-md bg-rose-500 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="/cart/cart.html" id="cartLink">
-                    <img src="https://img.icons8.com/ios-filled/50/FBF9F1/shopping-cart.png" class="h-5 w-5 sm:mr-2" alt="Cart" />
+                  <a
+                    class="block text-sm text-white font-medium py-2 rounded-md bg-rose-500 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110"
+                    href="/cart/cart.html"
+                    id="cartLink"
+                  >
+                    <img
+                      src="https://img.icons8.com/ios-filled/50/FBF9F1/shopping-cart.png"
+                      class="h-5 w-5 sm:mr-2"
+                      alt="Cart"
+                    />
                     <span>Cart</span>
-                    <span class="cart-count ml-2 bg-pink-200 text-white rounded-full px-2 py-1 text-xs"></span>
+                    <span
+                      class="cart-count ml-2 bg-pink-200 text-white rounded-full px-2 py-1 text-xs"
+                    ></span>
                   </a>
                 </li>
               </ul>
@@ -491,202 +508,26 @@
       </div>
     </footer>
     <!-- Footer -->
-        <!-- Floating WhatsApp Button -->
-        <div class="fixed bottom-4 right-4 z-50">
-          <a
-            href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER_HERE"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button
-              class="bg-green-500 text-white rounded-full p-3 shadow-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
-            >
-              <!-- Whatsapp icon as image -->
-              <img
-                width="40"
-                height="40"
-                src="https://img.icons8.com/clouds/100/whatsapp.png"
-                alt="whatsapp"
-              />
-            </button>
-          </a>
-        </div>
-        <!-- End Floating WhatsApp Button -->
-
-    <script>
-      const reviewsData = [
-        {
-          productName: "Hair Mask Vanilla",
-          username: "Nurul",
-          comment: "Ulasan Produk 1",
-          rating: 4,
-          image: "/img/VANILLA.png",
-        },
-        {
-          productName: "Hair Mask Alovera",
-          username: "Yanti",
-          comment: "Ulasan Produk 2",
-          rating: 5,
-          image: "/img/ALOEVERA.png",
-        },
-        {
-          productName: "Hair Mask Banana",
-          username: "Putri",
-          comment: "Ulasan Produk 3",
-          rating: 3,
-          image: "/img/BANANA.png",
-        },
-      ];
-
-      function loadReviews() {
-        const reviewsContainer = document.getElementById("reviews");
-        reviewsContainer.innerHTML = "";
-
-        reviewsData.forEach((review) => {
-          const reviewCard = document.createElement("div");
-          reviewCard.className = "p-4 bg-white shadow rounded-lg review-card";
-
-          reviewCard.innerHTML = `
-          <img src="${
-            review.image
-          }" class="w-full h-40 object-cover mb-4" alt="Review Image">
-          <h2 class="text-xl font-semibold">${review.productName}</h2>
-          <div class="flex items-center mb-2">
-            ${[...Array(5)]
-              .map(
-                (_, i) => `
-              <img src="https://img.icons8.com/ios-filled/50/000000/star--v1.png" 
-              class="${
-                i < review.rating ? "text-yellow-500" : "text-gray-400"
-              }"/>
-            `
-              )
-              .join("")}
-          </div>
-          <p class="mb-4">${review.comment}</p>
-          <p class="text-gray-600">- ${review.username}</p>
-        `;
-
-          reviewsContainer.appendChild(reviewCard);
-        });
-      }
-
-      document.addEventListener("DOMContentLoaded", () => {
-        loadReviews();
-
-        document
-          .getElementById("add-review-btn")
-          .addEventListener("click", () => {
-            document.getElementById("myModal").style.display = "block";
-          });
-
-        document.querySelector(".close").addEventListener("click", () => {
-          document.getElementById("myModal").style.display = "none";
-        });
-
-        window.addEventListener("click", (event) => {
-          if (event.target == document.getElementById("myModal")) {
-            document.getElementById("myModal").style.display = "none";
-          }
-        });
-
-        document
-          .getElementById("review-form")
-          .addEventListener("submit", (event) => {
-            event.preventDefault();
-            const productName = document.getElementById("productName").value;
-            const username = document.getElementById("username").value;
-            const comment = document.getElementById("comment").value;
-            const imageFile = document.getElementById("image").files[0];
-
-            const reader = new FileReader();
-            reader.onloadend = () => {
-              reviewsData.push({
-                productName,
-                username,
-                comment,
-                rating: 0,
-                image: reader.result,
-              });
-              loadReviews();
-              document.getElementById("myModal").style.display = "none";
-            };
-            if (imageFile) {
-              reader.readAsDataURL(imageFile);
-            }
-          });
-      });
-      // Dropdown toggle
-      function toggleDropdown(event) {
-        event.preventDefault();
-        const dropdown = event.target.closest("li").querySelector("ul");
-        if (dropdown.classList.contains("hidden")) {
-          dropdown.classList.remove("hidden", "dropdown-exit-active");
-          dropdown.classList.add("dropdown-enter", "dropdown-enter-active");
-          setTimeout(() => {
-            dropdown.classList.remove(
-              "dropdown-enter",
-              "dropdown-enter-active"
-            );
-          }, 300);
-        } else {
-          dropdown.classList.add("dropdown-exit", "dropdown-exit-active");
-          setTimeout(() => {
-            dropdown.classList.add("hidden");
-            dropdown.classList.remove("dropdown-exit", "dropdown-exit-active");
-          }, 300);
-        }
-      }
-
-      // Attach toggleDropdown to the global scope
-      window.toggleDropdown = toggleDropdown;
-
-      // Function to get cart count
-      function getCartCount() {
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
-        return cart.length;
-      }
-
-      // Function to update cart count display
-      function updateCartCount() {
-        const cartCount = document.querySelector(".cart-count");
-        const count = getCartCount();
-        cartCount.textContent = count;
-        cartCount.style.display = count > 0 ? "inline" : "none";
-      }
-
-      // Update cart count on page load
-      window.addEventListener("load", updateCartCount);
-
-      // Sticky Header
-      window.addEventListener("scroll", function () {
-        const header = document.querySelector("header");
-        header.classList.toggle("sticky", window.scrollY > 0);
-      });
-
-      // Mobile menu toggle
-      document.getElementById("menuButton").addEventListener("click", () => {
-        const mobileMenu = document.querySelector(".mobile-menu");
-        if (mobileMenu.classList.contains("hidden")) {
-          mobileMenu.classList.remove("hidden");
-          mobileMenu.classList.add("dropdown-enter", "dropdown-enter-active");
-          setTimeout(() => {
-            mobileMenu.classList.remove(
-              "dropdown-enter",
-              "dropdown-enter-active"
-            );
-          }, 300);
-        } else {
-          mobileMenu.classList.add("dropdown-exit", "dropdown-exit-active");
-          setTimeout(() => {
-            mobileMenu.classList.add("hidden");
-            mobileMenu.classList.remove(
-              "dropdown-exit",
-              "dropdown-exit-active"
-            );
-          }, 300);
-        }
-      });
-    </script>
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed bottom-4 right-4 z-50">
+      <a
+        href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER_HERE"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button
+          class="bg-green-500 text-white rounded-full p-3 shadow-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+        >
+          <!-- Whatsapp icon as image -->
+          <img
+            width="40"
+            height="40"
+            src="https://img.icons8.com/clouds/100/whatsapp.png"
+            alt="whatsapp"
+          />
+        </button>
+      </a>
+    </div>
+    <!-- End Floating WhatsApp Button -->
   </body>
 </html>
