@@ -223,40 +223,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Toggle dropdown menu
-  function toggleDropdown(event, dropdownId) {
-    event.preventDefault();
-    const dropdown = document.getElementById(dropdownId);
-    dropdown.classList.toggle("hidden");
-  }
 
-  // Toggle mobile menu
-  function toggleMobileMenu() {
-    const mobileMenu = document.getElementById("mobileMenu");
-    mobileMenu.classList.toggle("hidden");
-  }
-
-  document
-    .getElementById("menuButton")
-    .addEventListener("click", toggleMobileMenu);
-
-  // Ensure dropdown menus close when clicking outside
-  document.addEventListener("click", function (event) {
-    const target = event.target;
-    const mobileMenu = document.getElementById("mobileMenu");
-    if (!mobileMenu.contains(target) && target.id !== "menuButton") {
-      mobileMenu.classList.add("hidden");
-    }
-
-    const dropdowns = document.querySelectorAll(".dropdown");
-    dropdowns.forEach((dropdown) => {
-      if (!dropdown.contains(target) && !target.closest('a[href="#"]')) {
-        dropdown.classList.add("hidden");
-      }
-    });
-  });
-});
 
 function toggleDropdown(event) {
     event.preventDefault();
