@@ -71,37 +71,48 @@
             </div>
         </div>
     </div>
-    <div id="mobileMenu" class="mobile-menu hidden bg-pink-200 shadow-lg rounded-2xl mt-6">
+    <div class="mobile-menu hidden md:hidden bg-pink-200 shadow-lg rounded-2xl mt-6">
         <ul class="flex flex-col items-start gap-2 p-4">
+          <li>
+            <a href="#" class="block text-sm text-white font-medium py-2" onclick="toggleDropdown(event)">Produk</a>
+          </li>
+          <ul id="produkDropdownMobile" class="hidden bg-white shadow-lg rounded-md ml-4">
             <li>
-                <a href="#" class="block text-sm text-white font-medium py-2" onclick="toggleDropdown(event, 'produkDropdownMobile')">Produk</a>
-                <ul id="produkDropdownMobile" class="hidden bg-white shadow-lg rounded-md ml-4">
-                    <li><a href="/produk/detail-produk-Aloevera.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Aloevera</a></li>
-                    <li><a href="/produk/detail-produk-Avocado.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Avocado</a></li>
-                    <li><a href="/produk/detail-produk-Banana.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Banana</a></li>
-                    <li><a href="/produk/detail-produk-Chocolate.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Chocolate</a></li>
-                    <li><a href="/produk/detail-produk-Orange.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Orange</a></li>
-                    <li><a href="/produk/detail-produk-Strawberry.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Strawberry</a></li>
-                    <li><a href="/produk/detail-produk-Vanilla.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Vanilla</a></li>
-                </ul>
+              <a href="/produk/detail-produk-Aloevera.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Aloevera</a>
             </li>
-            <li><a href="/review.html" class="block text-sm text-white font-medium py-2">Review</a></li>
-            <li><a href="/haircare.html" class="block text-sm text-white font-medium py-2">Perawatan Rambut</a></li>
-            <li><a href="/artikel/artikel.html" class="block text-sm text-white font-medium py-2">Artikel</a></li>
-            <li><a href="https://www.instagram.com/itsmyholy/" class="block text-sm text-white font-medium py-2">Shop</a></li>
-            <li class="flex gap-2">
-                <a class="block text-sm text-white font-medium py-2 rounded-md bg-emerald-400 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER_HERE">
-                    <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" class="h-5 w-5 sm:mr-2" alt="WhatsApp" />
-                    <span>WhatsApp</span>
-                </a>
-                <a class="block text-sm text-white font-medium py-2 rounded-md bg-rose-500 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="/cart/cart.html" id="cartLink">
-                    <img src="https://img.icons8.com/ios-filled/50/FBF9F1/shopping-cart.png" class="h-5 w-5 sm:mr-2" alt="Cart" />
-                    <span>Cart</span>
-                    <span class="cart-count ml-2 bg-pink-200 text-white rounded-full px-2 py-1 text-xs"></span>
-                </a>
+            <li>
+              <a href="/produk/detail-produk-Avocado.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Avocado</a>
             </li>
+            <li>
+              <a href="/produk/detail-produk-Banana.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Banana</a>
+            </li>
+            <li>
+              <a href="/produk/detail-produk-Chocolate.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Chocolate</a>
+            </li>
+            <li>
+              <a href="/produk/detail-produk-Orange.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Orange</a>
+            </li>
+            <li>
+              <a href="/produk/detail-produk-Strawberry.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Strawberry</a>
+            </li>
+            <li>
+              <a href="/produk/detail-produk-Vanilla.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Vanilla</a>
+            </li>
+          </ul>
+          <li>
+            <a href="/review.html" class="block text-sm text-white font-medium py-2">Review</a>
+          </li>
+          <li>
+            <a href="/haircare.html" class="block text-sm text-white font-medium py-2">Perawatan Rambut</a>
+          </li>
+          <li>
+            <a href="/artikel/artikel.html" class="block text-sm text-white font-medium py-2">Artikel</a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/itsmyholy/" class="block text-sm text-white font-medium py-2">Shop</a>
+          </li>
         </ul>
-    </div>
+      </div>
 </header>
 <!-- Header -->
 

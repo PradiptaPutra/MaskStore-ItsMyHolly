@@ -257,3 +257,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+function toggleDropdown(event) {
+    event.preventDefault();
+    const dropdown = document.getElementById('produkDropdownMobile');
+    dropdown.classList.toggle('hidden');
+  }
+  
