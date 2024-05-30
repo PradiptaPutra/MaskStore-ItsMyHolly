@@ -1,5 +1,46 @@
 body, h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
+  color: #333; /* Default text color */
+  margin: 0;
+  padding: 0;
+}
+
+/* Body styling */
+body {
+  background-color: #f9fafb; /* Light background color */
+  line-height: 1.6;
+}
+
+/* Headings styling */
+h1 {
+  font-size: 2.25rem; /* 36px */
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+h2 {
+  font-size: 1.875rem; /* 30px */
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+h3 {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+h4 {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+h5 {
+  font-size: 1rem; /* 16px */
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+h6 {
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
 /* Style for next/previous buttons */
@@ -7,11 +48,15 @@ body, h1, h2, h3, h4, h5, h6 {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(246, 245, 242, 0.5); /* #F6F5F2 */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   padding: 8px;
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+.slider-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
 }
 .prev-btn {
   left: 10px;
@@ -24,23 +69,23 @@ body, h1, h2, h3, h4, h5, h6 {
 #produkDropdown {
   top: 2.5rem; /* Adjust the dropdown position */
   left: 10;
-  width: 10rem; /* Adjust the dropdown width */
+  width: 12rem; /* Adjust the dropdown width */
   z-index: 10; /* Ensure dropdown is above other content */
-  border-radius: 20px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Dropdown shadow */
 }
-
 #produkDropdown li {
   display: block;
 }
 #produkDropdown li a {
   display: block;
   padding: 0.5rem 1rem;
-  color: #4a5568; /* #F0EBE3 */
+  color: #4a5568; /* Text color */
   text-decoration: none;
   transition: background-color 0.2s ease;
 }
 #produkDropdown li a:hover {
-  background-color: #edf2f7;
+  background-color: #edf2f7; /* Light gray on hover */
 }
 
 /* Custom CSS for rectangular banners with rounded corners */
@@ -49,53 +94,160 @@ body, h1, h2, h3, h4, h5, h6 {
   bottom: 4px;
   left: 4px;
   z-index: 10;
-  background-color: #f3d0d7; /* #F3D0D7 */
-  color: #1a202c; /* Text color */
-  padding: 8px 16px; /* Adjust padding as needed */
-  font-size: 14px; /* Adjust font size as needed */
+  background-color: #f3d0d7; /* Light pink background */
+  color: #1a202c; /* Dark text color */
+  padding: 8px 16px; /* Padding */
+  font-size: 14px; /* Font size */
   border-radius: 8px; /* Rounded corners */
 }
 
+/* Product image styles */
 .product-img {
   width: 100%;
   height: auto;
   transition: transform 0.5s ease-in-out;
 }
-
 .group:hover .product-img {
   transform: scale(1.05);
 }
 
-.banner {
+/* Product card hover effect */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Sale badge styles */
+.sale-badge {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  top: 10px;
+  right: 10px;
+  background-color: #f67575; /* Red background */
+  color: #fff; /* White text */
+  padding: 5px 10px;
+  border-radius: 9999px; /* Full round corners */
+  font-size: 0.75rem; /* Font size */
+  font-weight: bold;
+  max-width: 50px;
+}
+
+/* Swiper and product card styles */
+.swiper-container {
   width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  text-align: center;
-  padding: 0.5rem;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  max-width: 1200px; /* Max width */
+  padding: 1rem 0;
+  overflow: hidden;
+  margin: 0 auto; /* Center align the container */
+  position: relative; /* Ensure positioning for the navigation buttons */
 }
-
-.group:hover .banner {
-  opacity: 1;
+.swiper-wrapper {
+  display: flex;
 }
-
-.swiper-slide .product-image {
+.swiper-slide {
+  width: 300px;
+  height: auto;
+  flex-shrink: 0;
+}
+.product-card {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;
+  background-color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+.product-card:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
   transition: transform 0.5s ease-in-out;
 }
-
-.swiper-slide:hover .product-image {
-  transform: scale(1.05);
+.product-card:hover .product-image {
+  transform: scale(1.1);
+}
+.product-details {
+  padding: 1rem;
+  text-align: center;
+}
+.product-title {
+  font-size: 1.25rem; /* Font size */
+  font-weight: 600;
+  color: #333; /* Dark text color */
+}
+.product-description {
+  font-size: 1rem; /* Font size */
+  color: #666; /* Gray text color */
+}
+.staggered-animation {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.staggered-animation-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Additional Tailwind CSS classes */
+/* Swiper navigation buttons */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #333;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.swiper-button-prev {
+  left: 10px;
+}
+.swiper-button-next {
+  right: 10px;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: #000;
+}
+
+
+/* Custom transitions and effects */
+.blur-on-scroll {
+  transition: filter 0.3s ease-in-out;
+}
+.blur-on-scroll.scrolled {
+  backdrop-filter: blur(10px);
+}
 .glowing {
-  transition: color 0.3s ease, background-color 0.3s ease;
+  position: relative;
+}
+.glowing::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: inherit;
+  filter: blur(15px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.glowing:hover::before {
+  opacity: 1;
+}
+.slider-image {
+  transition: opacity 0.7s ease-in-out;
+}
+.slider-dot:hover {
+  transform: scale(1.25);
 }
 
+/* Additional styles for dropdown animations */
 .dropdown-enter {
   opacity: 0;
   transform: translateY(-10%);
@@ -115,168 +267,21 @@ body, h1, h2, h3, h4, h5, h6 {
   transition: opacity 0.3s, transform 0.3s;
 }
 
-.swiper {
-  width: 100%;
-  padding: 1rem;
-  overflow: hidden;
-}
-
-.swiper-wrapper {
-  display: flex;
-}
-
-.swiper-slide {
-  width: 300px;
-  height: auto;
-  flex-shrink: 0;
-}
-
-.product-card {
-  border-radius: 0.5rem;
-  overflow: hidden;
-  position: relative;
-}
-
-.product-image {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-}
-
-.sale-badge {
-  position: absolute;
-  max-width: 50px;
-  top: 0.5rem;
-  right: 0.5rem;
-  background-color: #f67575; /* #FFEFEF */
-  color: #fff;
-  padding: 0.25rem 0.5rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-}
-
-.product-details {
-  padding: 1rem;
-}
-
-/* Sticky Header */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-}
-
-.mobile-menu {
+.hidden {
   display: none;
 }
-/* Swiper and product card styles */
-.swiper-container {
-  width: 100%;
-  max-width: 1200px; /* Adjust as needed */
-  padding: 1rem 0;
-  overflow: hidden;
-  margin: 0 auto; /* Center align the container */
-  position: relative; /* Ensure positioning for the navigation buttons */
-}
 
-.swiper-wrapper {
-  display: flex;
-}
-
-.swiper-slide {
-  width: 300px;
-  height: auto;
-  flex-shrink: 0;
-}
-
-.product-card {
-  border-radius: 0.5rem;
-  overflow: hidden;
-  position: relative;
-  background-color: #ffffff;
-  transition: all 0.3s ease-in-out;
-}
-
-.product-card:hover {
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.product-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  transition: transform 0.5s ease-in-out;
-}
-
-.product-card:hover .product-image {
-  transform: scale(1.1);
-}
-
-.product-details {
-  padding: 1rem;
-  text-align: center;
-}
-
-.product-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #333;
-}
-
-.product-description {
-  font-size: 1rem;
-  color: #666;
-}
-
-.sale-badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #f67575;
-  color: #fff;
-  padding: 5px 10px;
-  font-size: 0.75rem;
-  border-radius: 5px;
-  z-index: 10;
-}
-
-.staggered-animation {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.staggered-animation-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Swiper navigation buttons */
-.swiper-button-prev,
-.swiper-button-next {
-  color: #333;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-}
-
-.swiper-button-prev {
-  left: 10px;
-}
-
-.swiper-button-next {
-  right: 10px;
-}
-
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  color: #000;
+#mobileMenu {
+  display: none;
 }
 
 @media (max-width: 768px) {
-  .mobile-menu {
+  #mobileMenu {
     display: block;
   }
 }
+
+
+
+
+

@@ -10,85 +10,10 @@
     <link rel="stylesheet" href="styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <script src="app.js" defer></script>
-
-    <style>
-        .product-img {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .product-img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .staggered-animation {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .staggered-animation-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .sale-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: red;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-
-        .slider-btn {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .slider-btn:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        .swiper-container {
-            width: 100%;
-            padding-top: 50px;
-            padding-bottom: 50px;
-        }
-
-        .swiper-slide {
-            background-position: center;
-            background-size: cover;
-            width: 300px;
-            height: 300px;
-        }
-
-        body {
-            background-color: #f3f4f6;
-        }
-
-        .blur-on-scroll {
-            transition: filter 0.3s ease-in-out;
-        }
-
-        .product-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+ 
 </head>
-<body class="bg-gray-100">
+<body>
+
 <!-- Header -->
 <header class="bg-pink-300 shadow-lg rounded-2xl mb-6 blur-on-scroll">
     <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -102,55 +27,33 @@
             <div class="hidden md:block">
                 <nav aria-label="Global">
                     <ul class="flex items-center gap-6 text-sm">
-                        <li>
-                            <a class="text-white font-medium glowing" href="#" onclick="toggleDropdown(event)">
+                        <li class="relative">
+                            <a class="text-white font-medium glowing" href="#" onclick="toggleDropdown(event, 'produkDropdown')">
                                 Produk
                                 <svg class="h-4 w-4 inline-block ml-1 transition-transform transform hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                                 </svg>
                             </a>
-                            <ul id="produkDropdown" class="absolute hidden bg-white shadow-lg rounded-md mt-2">
-                                <li>
-                                    <a href="/produk/detail-produk-Aloevera.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Aloevera</a>
-                                </li>
-                                <li>
-                                    <a href="/produk/detail-produk-Avocado.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Avocado</a>
-                                </li>
-                                <li>
-                                    <a href="/produk/detail-produk-Banana.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Banana</a>
-                                </li>
-                                <li>
-                                    <a href="/produk/detail-produk-Chocolate.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Chocolate</a>
-                                </li>
-                                <li>
-                                    <a href="/produk/detail-produk-Orange.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Orange</a>
-                                </li>
-                                <li>
-                                    <a href="/produk/detail-produk-Strawberry.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Strawberry</a>
-                                </li>
-                                <li>
-                                    <a href="/produk/detail-produk-Vanilla.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Vanilla</a>
-                                </li>
+                            <ul id="produkDropdown" class="absolute hidden bg-white shadow-lg rounded-md mt-2 z-10">
+                                <li><a href="/produk/detail-produk-Aloevera.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Aloevera</a></li>
+                                <li><a href="/produk/detail-produk-Avocado.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Avocado</a></li>
+                                <li><a href="/produk/detail-produk-Banana.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Banana</a></li>
+                                <li><a href="/produk/detail-produk-Chocolate.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Chocolate</a></li>
+                                <li><a href="/produk/detail-produk-Orange.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Orange</a></li>
+                                <li><a href="/produk/detail-produk-Strawberry.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Strawberry</a></li>
+                                <li><a href="/produk/detail-produk-Vanilla.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Vanilla</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a class="text-white font-medium transition hover:text-gray-500/75" href="/review.html">Review</a>
-                        </li>
-                        <li>
-                            <a class="text-white font-medium transition hover:text-gray-500/75" href="/haircare.html">Perawatan Rambut</a>
-                        </li>
-                        <li>
-                            <a class="text-white font-medium transition hover:text-gray-500/75" href="/artikel/artikel.html">Artikel</a>
-                        </li>
-                        <li>
-                            <a class="bg-rose-500 bg-cover text-white transition hover:text-gray-500/75 glowing rounded-md px-4 py-2" href="https://www.instagram.com/itsmyholy/">Shop</a>
-                        </li>
+                        <li><a class="text-white font-medium transition hover:text-gray-500/75" href="/review.html">Review</a></li>
+                        <li><a class="text-white font-medium transition hover:text-gray-500/75" href="/haircare.html">Perawatan Rambut</a></li>
+                        <li><a class="text-white font-medium transition hover:text-gray-500/75" href="/artikel/artikel.html">Artikel</a></li>
+                        <li><a class="bg-rose-500 text-white font-medium transition hover:text-gray-500/75 glowing rounded-md px-4 py-2" href="https://www.instagram.com/itsmyholy/">Shop</a></li>
                         <li class="flex gap-2">
-                            <a class="block text-sm text-white font-medium py-2 rounded-md bg-emerald-400 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER_HERE">
+                            <a class="block text-sm text-white font-medium rounded-md bg-emerald-400 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER_HERE">
                                 <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" class="h-5 w-5 sm:mr-2" alt="WhatsApp" />
                                 <span>WhatsApp</span>
                             </a>
-                            <a class="block text-sm text-white font-medium py-2 rounded-md bg-rose-500 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="/cart/cart.html" id="cartLink">
+                            <a class="block text-sm text-white font-medium rounded-md bg-rose-500 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="/cart/cart.html" id="cartLink">
                                 <img src="https://img.icons8.com/ios-filled/50/FBF9F1/shopping-cart.png" class="h-5 w-5 sm:mr-2" alt="Cart" />
                                 <span>Cart</span>
                                 <span class="cart-count ml-2 bg-pink-200 text-white rounded-full px-2 py-1 text-xs"></span>
@@ -160,7 +63,7 @@
                 </nav>
             </div>
             <div class="flex items-center gap-4 md:hidden">
-                <button id="menuButton" class="text-white focus:outline-none">
+                <button id="menuButton" class="text-white focus:outline-none" onclick="toggleMobileMenu()">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -168,46 +71,24 @@
             </div>
         </div>
     </div>
-    <div class="mobile-menu hidden md:hidden bg-pink-200 shadow-lg rounded-2xl mt-6">
+    <div id="mobileMenu" class="mobile-menu hidden bg-pink-200 shadow-lg rounded-2xl mt-6">
         <ul class="flex flex-col items-start gap-2 p-4">
             <li>
-                <a href="#" class="block text-sm text-white font-medium py-2" onclick="toggleDropdown(event)">Produk</a>
+                <a href="#" class="block text-sm text-white font-medium py-2" onclick="toggleDropdown(event, 'produkDropdownMobile')">Produk</a>
+                <ul id="produkDropdownMobile" class="hidden bg-white shadow-lg rounded-md ml-4">
+                    <li><a href="/produk/detail-produk-Aloevera.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Aloevera</a></li>
+                    <li><a href="/produk/detail-produk-Avocado.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Avocado</a></li>
+                    <li><a href="/produk/detail-produk-Banana.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Banana</a></li>
+                    <li><a href="/produk/detail-produk-Chocolate.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Chocolate</a></li>
+                    <li><a href="/produk/detail-produk-Orange.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Orange</a></li>
+                    <li><a href="/produk/detail-produk-Strawberry.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Strawberry</a></li>
+                    <li><a href="/produk/detail-produk-Vanilla.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Vanilla</a></li>
+                </ul>
             </li>
-            <ul id="produkDropdownMobile" class="hidden bg-white shadow-lg rounded-md ml-4">
-                <li>
-                    <a href="/produk/detail-produk-Aloevera.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Aloevera</a>
-                </li>
-                <li>
-                    <a href="/produk/detail-produk-Avocado.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Avocado</a>
-                </li>
-                <li>
-                    <a href="/produk/detail-produk-Banana.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Banana</a>
-                </li>
-                <li>
-                    <a href="/produk/detail-produk-Chocolate.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Chocolate</a>
-                </li>
-                <li>
-                    <a href="/produk/detail-produk-Orange.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Orange</a>
-                </li>
-                <li>
-                    <a href="/produk/detail-produk-Strawberry.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Strawberry</a>
-                </li>
-                <li>
-                    <a href="/produk/detail-produk-Vanilla.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Vanilla</a>
-                </li>
-            </ul>
-            <li>
-                <a href="/review.html" class="block text-sm text-white font-medium py-2">Review</a>
-            </li>
-            <li>
-                <a href="/haircare.html" class="block text-sm text-white font-medium py-2">Perawatan Rambut</a>
-            </li>
-            <li>
-                <a href="/artikel/artikel.html" class="block text-sm text-white font-medium py-2">Artikel</a>
-            </li>
-            <li>
-                <a href="https://www.instagram.com/itsmyholy/" class="block text-sm text-white font-medium py-2">Shop</a>
-            </li>
+            <li><a href="/review.html" class="block text-sm text-white font-medium py-2">Review</a></li>
+            <li><a href="/haircare.html" class="block text-sm text-white font-medium py-2">Perawatan Rambut</a></li>
+            <li><a href="/artikel/artikel.html" class="block text-sm text-white font-medium py-2">Artikel</a></li>
+            <li><a href="https://www.instagram.com/itsmyholy/" class="block text-sm text-white font-medium py-2">Shop</a></li>
             <li class="flex gap-2">
                 <a class="block text-sm text-white font-medium py-2 rounded-md bg-emerald-400 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER_HERE">
                     <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" class="h-5 w-5 sm:mr-2" alt="WhatsApp" />
@@ -322,7 +203,7 @@
                 <a href="/produk/detail-produk-Strawberry.html" class="group block overflow-hidden rounded-lg shadow-lg transform transition hover:scale-105 bg-white">
                     <img src="img/woman-getting-hair-loss-treatment-clinic.png" alt="Produk 1" class="product-img w-full h-48 object-cover transition duration-500 group-hover:scale-110" />
                     <div class="p-4">
-                        <h3 class="font-bold text-gray-900">Ketombe Rambut</h3>
+                        <h3 class="font-bold text-gray-900">Masalah Ketombe Rambut</h3>
                     </div>
                 </a>
             </li>
@@ -491,7 +372,7 @@
 
 <!-- Floating WhatsApp Button -->
 <div class="fixed bottom-4 right-4 z-50">
-    <a href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER_HERE" target="_blank" rel="noopener noreferrer">
+    <a href="https://api.whatsapp.com/send?phone=085265894479" target="_blank" rel="noopener noreferrer">
         <button class="bg-green-500 text-white rounded-full p-3 shadow-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
             <img width="40" height="40" src="https://img.icons8.com/clouds/100/whatsapp.png" alt="whatsapp" />
         </button>
@@ -509,14 +390,6 @@
             HAIR MASK by IT'S MY HOLY Perfumed Hair Mask (formulated to damage hair) Long lasting Fragrance ♡
         </p>
         <ul class="mt-12 flex justify-center gap-6 md:gap-8">
-            <li>
-                <a href="#" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
-                    <span class="sr-only">Facebook</span>
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
-                    </svg>
-                </a>
-            </li>
             <li>
                 <a href="https://www.instagram.com/itsmyholy/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
                     <span class="sr-only">Instagram</span>
