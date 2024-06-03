@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -10,68 +10,66 @@
     <link rel="stylesheet" href="styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <script src="app.js" defer></script>
- 
-</head>
-<body>
-
-<!-- Header -->
-<header class="bg-pink-300 shadow-lg rounded-2xl mb-6 blur-on-scroll">
-    <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="bg-pink-300 shadow-lg rounded-2xl mb-6 blur-on-scroll">
+      <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
-            <div class="md:flex md:items-center md:gap-12 shadow-md rounded-full p-2 bg-white">
-                <a class="block text-teal-600" href="index.html">
-                    <span class="sr-only">Home</span>
-                    <img src="img/Logo.png" alt="Logo" class="h-10 rounded-full transition-transform transform hover:scale-110" />
-                </a>
-            </div>
-            <div class="hidden md:block">
-                <nav aria-label="Global">
-                    <ul class="flex items-center gap-6 text-sm">
-                        <li class="relative">
-                            <a class="text-white font-medium glowing" href="#" onclick="toggleDropdown(event, 'produkDropdown')">
-                                Produk
-                                <svg class="h-4 w-4 inline-block ml-1 transition-transform transform hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </a>
-                            <ul id="produkDropdown" class="absolute hidden bg-white shadow-lg rounded-md mt-2 z-10">
-                                <li><a href="/produk/detail-produk-Aloevera.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Aloevera</a></li>
-                                <li><a href="/produk/detail-produk-Avocado.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Avocado</a></li>
-                                <li><a href="/produk/detail-produk-Banana.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Banana</a></li>
-                                <li><a href="/produk/detail-produk-Chocolate.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Chocolate</a></li>
-                                <li><a href="/produk/detail-produk-Orange.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Orange</a></li>
-                                <li><a href="/produk/detail-produk-Strawberry.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Strawberry</a></li>
-                                <li><a href="/produk/detail-produk-Vanilla.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Vanilla</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="text-white font-medium transition hover:text-gray-500/75" href="/review.html">Review</a></li>
-                        <li><a class="text-white font-medium transition hover:text-gray-500/75" href="/haircare.html">Perawatan Rambut</a></li>
-                        <li><a class="text-white font-medium transition hover:text-gray-500/75" href="/artikel/artikel.html">Artikel</a></li>
-                        <li><a class="bg-rose-500 text-white font-medium transition hover:text-gray-500/75 glowing rounded-md px-4 py-2" href="https://www.instagram.com/itsmyholy/">Shop</a></li>
-                        <li class="flex gap-2">
-                            <a class="block text-sm text-white font-medium rounded-md bg-emerald-400 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER_HERE">
-                                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" class="h-5 w-5 sm:mr-2" alt="WhatsApp" />
-                                <span>WhatsApp</span>
-                            </a>
-                            <a class="block text-sm text-white font-medium rounded-md bg-rose-500 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="/cart/cart.html" id="cartLink">
-                                <img src="https://img.icons8.com/ios-filled/50/FBF9F1/shopping-cart.png" class="h-5 w-5 sm:mr-2" alt="Cart" />
-                                <span>Cart</span>
-                                <span class="cart-count ml-2 bg-pink-200 text-white rounded-full px-2 py-1 text-xs"></span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="flex items-center gap-4 md:hidden">
-                <button id="menuButton" class="text-white focus:outline-none" onclick="toggleMobileMenu()">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          <div class="md:flex md:items-center md:gap-12 shadow-md rounded-full p-2 bg-white">
+            <a class="block text-teal-600" href="index.html">
+            <span class="sr-only">Home</span>
+            <img src="img/Logo.png" alt="Logo" class="h-10 rounded-full transition-transform transform hover:scale-110" />
+            </a>
+          </div>
+          <div class="hidden md:block">
+            <nav aria-label="Global">
+              <ul class="flex items-center gap-6 text-sm">
+                <li class="relative">
+                  <a class="text-white font-medium glowing" href="#" onclick="toggleDropdown(event, 'produkDropdown')">
+                    Produk
+                    <svg class="h-4 w-4 inline-block ml-1 transition-transform transform hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                     </svg>
-                </button>
-            </div>
+                  </a>
+                  <ul id="produkDropdown" class="absolute hidden bg-white shadow-lg rounded-md mt-2 z-10">
+                    <li><a href="/produk/detail-produk-Aloevera.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Aloevera</a></li>
+                    <li><a href="/produk/detail-produk-Avocado.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Avocado</a></li>
+                    <li><a href="/produk/detail-produk-Banana.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Banana</a></li>
+                    <li><a href="/produk/detail-produk-Chocolate.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Chocolate</a></li>
+                    <li><a href="/produk/detail-produk-Orange.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Orange</a></li>
+                    <li><a href="/produk/detail-produk-Strawberry.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Strawberry</a></li>
+                    <li><a href="/produk/detail-produk-Vanilla.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Vanilla</a></li>
+                  </ul>
+                </li>
+                <li><a class="text-white font-medium transition hover:text-gray-500/75" href="/review.html">Review</a></li>
+                <li><a class="text-white font-medium transition hover:text-gray-500/75" href="/haircare.html">Perawatan Rambut</a></li>
+                <li><a class="text-white font-medium transition hover:text-gray-500/75" href="/artikel/artikel.html">Artikel</a></li>
+                <li><a class="bg-rose-500 text-white font-medium transition hover:text-gray-500/75 glowing rounded-md px-4 py-2" href="https://www.instagram.com/itsmyholy/">Shop</a></li>
+                <li class="flex gap-2">
+                  <a class="block text-sm text-white font-medium rounded-md bg-emerald-400 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER_HERE">
+                  <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" class="h-5 w-5 sm:mr-2" alt="WhatsApp" />
+                  <span>WhatsApp</span>
+                  </a>
+                  <a class="block text-sm text-white font-medium rounded-md bg-rose-500 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="/cart/cart.html" id="cartLink">
+                  <img src="https://img.icons8.com/ios-filled/50/FBF9F1/shopping-cart.png" class="h-5 w-5 sm:mr-2" alt="Cart" />
+                  <span>Cart</span>
+                  <span class="cart-count ml-2 bg-pink-200 text-white rounded-full px-2 py-1 text-xs"></span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="flex items-center gap-4 md:hidden">
+            <button id="menuButton" class="text-white focus:outline-none" onclick="toggleMobileMenu()">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
         </div>
-    </div>
-    <div class="mobile-menu hidden md:hidden bg-pink-200 shadow-lg rounded-2xl mt-6">
+      </div>
+      <div class="mobile-menu hidden md:hidden bg-pink-200 shadow-lg rounded-2xl mt-6">
         <ul class="flex flex-col items-start gap-2 p-4">
           <li><a href="/produk/detail-produk-Aloevera.html" class="block text-sm text-white font-medium py-2">Aloevera</a></li>
           <li><a href="/produk/detail-produk-Avocado.html" class="block text-sm text-white font-medium py-2">Avocado</a></li>
@@ -86,12 +84,11 @@
           <li><a href="https://www.instagram.com/itsmyholy/" class="block text-sm text-white font-medium py-2">Shop</a></li>
         </ul>
       </div>
-</header>
-<!-- Header -->
-
-<!-- Slider -->
-<div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 mt-4 relative">
-    <div class="w-full relative overflow-hidden rounded-lg shadow-lg" style="padding-top: 50%; position: relative;">
+    </header>
+    <!-- Header -->
+    <!-- Slider -->
+    <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 mt-4 relative">
+      <div class="w-full relative overflow-hidden rounded-lg shadow-lg" style="padding-top: 50%; position: relative;">
         <img src="img/ALOEVERA.png" alt="Slider Image 1" class="absolute top-0 left-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out slider-image opacity-100" />
         <img src="img/BANANA.png" alt="Slider Image 2" class="absolute top-0 left-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out slider-image opacity-0" />
         <img src="img/Chocolate.png" alt="Slider Image 3" class="absolute top-0 left-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out slider-image opacity-0" />
@@ -99,293 +96,281 @@
         <img src="img/Avocado.png" alt="Slider Image 5" class="absolute top-0 left-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out slider-image opacity-0" />
         <img src="img/strawbwerry.png" alt="Slider Image 6" class="absolute top-0 left-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out slider-image opacity-0" />
         <img src="img/VANILLA.png" alt="Slider Image 7" class="absolute top-0 left-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out slider-image opacity-0" />
-
         <button class="slider-btn prev-btn absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-            </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
         </button>
-
         <button class="slider-btn next-btn absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-            </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
         </button>
-
         <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            <span class="slider-dot w-3 h-3 bg-white rounded-full cursor-pointer transition transform hover:scale-125" onclick="goToSlide(0)"></span>
-            <span class="slider-dot w-3 h-3 bg-white rounded-full cursor-pointer opacity-50 transition transform hover:scale-125" onclick="goToSlide(1)"></span>
-            <span class="slider-dot w-3 h-3 bg-white rounded-full cursor-pointer opacity-50 transition transform hover:scale-125" onclick="goToSlide(2)"></span>
-            <span class="slider-dot w-3 h-3 bg-white rounded-full cursor-pointer opacity-50 transition transform hover:scale-125" onclick="goToSlide(3)"></span>
-            <span class="slider-dot w-3 h-3 bg-white rounded-full cursor-pointer opacity-50 transition transform hover:scale-125" onclick="goToSlide(4)"></span>
-            <span class="slider-dot w-3 h-3 bg-white rounded-full cursor-pointer opacity-50 transition transform hover:scale-125" onclick="goToSlide(5)"></span>
-            <span class="slider-dot w-3 h-3 bg-white rounded-full cursor-pointer opacity-50 transition transform hover:scale-125" onclick="goToSlide(6)"></span>
+          <span class="slider-dot w-3 h-3 bg-white rounded-full cursor-pointer transition transform hover:scale-125" onclick="goToSlide(0)"></span>
+          <span class="slider-dot w-3 h-3 bg-white rounded-full cursor-pointer opacity-50 transition transform hover:scale-125" onclick="goToSlide(1)"></span>
+          <span class="slider-dot w-3 h-3 bg-white rounded-full cursor-pointer opacity-50 transition transform hover:scale-125" onclick="goToSlide(2)"></span>
+          <span class="slider-dot w-3 h-3 bg-white rounded-full cursor-pointer opacity-50 transition transform hover:scale-125" onclick="goToSlide(3)"></span>
+          <span class="slider-dot w-3 h-3 bg-white rounded-full cursor-pointer opacity-50 transition transform hover:scale-125" onclick="goToSlide(4)"></span>
+          <span class="slider-dot w-3 h-3 bg-white rounded-full cursor-pointer opacity-50 transition transform hover:scale-125" onclick="goToSlide(5)"></span>
+          <span class="slider-dot w-3 h-3 bg-white rounded-full cursor-pointer opacity-50 transition transform hover:scale-125" onclick="goToSlide(6)"></span>
         </div>
+      </div>
     </div>
-</div>
-<!-- Slider -->
-
-<!-- Produk Kami -->
-<section>
-    <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+    <!-- Slider -->
+    <!-- Produk Kami -->
+    <section>
+      <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <header class="text-center">
-            <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">Produk Kami</h2>
-            <p class="mx-auto mt-4 max-w-md text-gray-500">Rangkaian produk perawatan rambut yang terbuat dari bahan-bahan alami berkualitas tinggi. Produk kami dirancang untuk membantu Anda mendapatkan rambut yang sehat, berkilau, dan mudah diatur.</p>
+          <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">Produk Kami</h2>
+          <p class="mx-auto mt-4 max-w-md text-gray-500">Rangkaian produk perawatan rambut yang terbuat dari bahan-bahan alami berkualitas tinggi. Produk kami dirancang untuk membantu Anda mendapatkan rambut yang sehat, berkilau, dan mudah diatur.</p>
         </header>
-
         <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <li>
-                <a href="/produk/detail-produk-Aloevera.html" class="group block overflow-hidden relative">
-                    <img src="img/Produk Aloevera.png" alt="Produk 1" class="product-img w-full rounded-lg object-cover transition duration-500 group-hover:scale-105" />
-                </a>
-            </li>
-            <li>
-                <a href="/produk/detail-produk-Avocado.html" class="group block overflow-hidden relative">
-                    <img src="img/Produk Avocado.png" alt="Produk 2" class="product-img w-full rounded-lg h-auto object-cover transition duration-500 group-hover:scale-105" />
-                </a>
-            </li>
-            <li>
-                <a href="/produk/detail-produk-Banana.html" class="group block overflow-hidden relative">
-                    <img src="img/Produk Banana.png" alt="Produk 3" class="product-img w-full rounded-lg h-auto object-cover transition duration-500 group-hover:scale-105" />
-                </a>
-            </li>
-            <li>
-                <a href="/produk/detail-produk-Chocolate.html" class="group block overflow-hidden relative">
-                    <img src="img/Produk Chocolate.png" alt="Produk 4" class="product-img w-full rounded-lg h-auto object-cover transition duration-500 group-hover:scale-105" />
-                </a>
-            </li>
-            <li>
-                <a href="/produk/detail-produk-Orange.html" class="group block overflow-hidden relative">
-                    <img src="img/Produk Orange.png" alt="Produk 5" class="product-img w-full rounded-lg h-auto object-cover transition duration-500 group-hover:scale-105" />
-                </a>
-            </li>
-            <li>
-                <a href="/produk/detail-produk-Strawberry.html" class="group block overflow-hidden relative">
-                    <img src="img/Produk Strawberry.png" alt="Produk 6" class="product-img w-full rounded-lg h-auto object-cover transition duration-500 group-hover:scale-105" />
-                </a>
-            </li>
-            <li>
-                <a href="/produk/detail-produk-Vanilla.html" class="group block overflow-hidden relative">
-                    <img src="img/Produk Vanilla.png" alt="Produk 7" class="product-img w-full rounded-lg h-auto object-cover transition duration-500 group-hover:scale-105" />
-                </a>
-            </li>
+          <li>
+            <a href="/produk/detail-produk-Aloevera.html" class="group block overflow-hidden relative">
+            <img src="img/Produk Aloevera.png" alt="Produk 1" class="product-img w-full rounded-lg object-cover transition duration-500 group-hover:scale-105" />
+            </a>
+          </li>
+          <li>
+            <a href="/produk/detail-produk-Avocado.html" class="group block overflow-hidden relative">
+            <img src="img/Produk Avocado.png" alt="Produk 2" class="product-img w-full rounded-lg h-auto object-cover transition duration-500 group-hover:scale-105" />
+            </a>
+          </li>
+          <li>
+            <a href="/produk/detail-produk-Banana.html" class="group block overflow-hidden relative">
+            <img src="img/Produk Banana.png" alt="Produk 3" class="product-img w-full rounded-lg h-auto object-cover transition duration-500 group-hover:scale-105" />
+            </a>
+          </li>
+          <li>
+            <a href="/produk/detail-produk-Chocolate.html" class="group block overflow-hidden relative">
+            <img src="img/Produk Chocolate.png" alt="Produk 4" class="product-img w-full rounded-lg h-auto object-cover transition duration-500 group-hover:scale-105" />
+            </a>
+          </li>
+          <li>
+            <a href="/produk/detail-produk-Orange.html" class="group block overflow-hidden relative">
+            <img src="img/Produk Orange.png" alt="Produk 5" class="product-img w-full rounded-lg h-auto object-cover transition duration-500 group-hover:scale-105" />
+            </a>
+          </li>
+          <li>
+            <a href="/produk/detail-produk-Strawberry.html" class="group block overflow-hidden relative">
+            <img src="img/Produk Strawberry.png" alt="Produk 6" class="product-img w-full rounded-lg h-auto object-cover transition duration-500 group-hover:scale-105" />
+            </a>
+          </li>
+          <li>
+            <a href="/produk/detail-produk-Vanilla.html" class="group block overflow-hidden relative">
+            <img src="img/Produk Vanilla.png" alt="Produk 7" class="product-img w-full rounded-lg h-auto object-cover transition duration-500 group-hover:scale-105" />
+            </a>
+          </li>
         </ul>
-    </div>
-</section>
-<!-- Produk Kami -->
-
-<!-- Produk Yang Tepat -->
-<section class="bg-gray-100 py-8">
-    <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      </div>
+    </section>
+    <!-- Produk Kami -->
+    <!-- Produk Yang Tepat -->
+    <section class="bg-gray-100 py-8">
+      <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <header class="text-center mb-12">
-            <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">Produk Yang Tepat</h2>
-            <p class="mx-auto mt-4 max-w-md text-gray-500">Rangkaian produk perawatan rambut yang tepat untuk segala macam masalah rambut anda. Produk kami dirancang untuk membantu Anda mendapatkan rambut yang sehat, berkilau, dan mudah diatur.</p>
+          <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">Produk Yang Tepat</h2>
+          <p class="mx-auto mt-4 max-w-md text-gray-500">Rangkaian produk perawatan rambut yang tepat untuk segala macam masalah rambut anda. Produk kami dirancang untuk membantu Anda mendapatkan rambut yang sehat, berkilau, dan mudah diatur.</p>
         </header>
-
         <ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            <li>
-                <a href="/produk/detail-produk-Strawberry.html" class="group block overflow-hidden rounded-lg shadow-lg transform transition hover:scale-105 bg-white">
-                    <img src="img/woman-getting-hair-loss-treatment-clinic.png" alt="Produk 1" class="product-img w-full h-48 object-cover transition duration-500 group-hover:scale-110" />
-                    <div class="p-4">
-                        <h3 class="font-bold text-gray-900">Masalah Ketombe Rambut</h3>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/produk/detail-produk-Avocado.html" class="group block overflow-hidden rounded-lg shadow-lg transform transition hover:scale-105 bg-white">
-                    <img src="img/closeup-profile-portrait-upset-astonished-woman-looking-her-dry-hair-having-problems-needs-change-shampoo-special-treatment-trichological-clinic.png" alt="Produk 2" class="product-img w-full h-48 object-cover transition duration-500 group-hover:scale-110" />
-                    <div class="p-4">
-                        <h3 class="font-bold text-gray-900">Rambut Patah & Bercabang</h3>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/produk/detail-produk-Chocolate.html" class="group block overflow-hidden rounded-lg shadow-lg transform transition hover:scale-105 bg-white">
-                    <img src="img/woman-giving-herself-scalp-massage.png" alt="Produk 3" class="product-img w-full h-48 object-cover transition duration-500 group-hover:scale-110" />
-                    <div class="p-4">
-                        <h3 class="font-bold text-gray-900">Menumbuhkan Rambut</h3>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/produk/detail-produk-Vanilla.html" class="group block overflow-hidden rounded-lg shadow-lg transform transition hover:scale-105 bg-white">
-                    <img src="img/young-beautiful-angry-crazy-brunette-businessgirl-clutching-her-head-screaming-looking-away-white-wall.png" alt="Produk 4" class="product-img w-full h-48 object-cover transition duration-500 group-hover:scale-110" />
-                    <div class="p-4">
-                        <h3 class="font-bold text-gray-900">Masalah Rambut Rontok</h3>
-                    </div>
-                </a>
-            </li>
+          <li>
+            <a href="/produk/detail-produk-Strawberry.html" class="group block overflow-hidden rounded-lg shadow-lg transform transition hover:scale-105 bg-white">
+              <img src="img/woman-getting-hair-loss-treatment-clinic.png" alt="Produk 1" class="product-img w-full h-48 object-cover transition duration-500 group-hover:scale-110" />
+              <div class="p-4">
+                <h3 class="font-bold text-gray-900">Masalah Ketombe Rambut</h3>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="/produk/detail-produk-Avocado.html" class="group block overflow-hidden rounded-lg shadow-lg transform transition hover:scale-105 bg-white">
+              <img src="img/closeup-profile-portrait-upset-astonished-woman-looking-her-dry-hair-having-problems-needs-change-shampoo-special-treatment-trichological-clinic.png" alt="Produk 2" class="product-img w-full h-48 object-cover transition duration-500 group-hover:scale-110" />
+              <div class="p-4">
+                <h3 class="font-bold text-gray-900">Rambut Patah & Bercabang</h3>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="/produk/detail-produk-Chocolate.html" class="group block overflow-hidden rounded-lg shadow-lg transform transition hover:scale-105 bg-white">
+              <img src="img/woman-giving-herself-scalp-massage.png" alt="Produk 3" class="product-img w-full h-48 object-cover transition duration-500 group-hover:scale-110" />
+              <div class="p-4">
+                <h3 class="font-bold text-gray-900">Menumbuhkan Rambut</h3>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="/produk/detail-produk-Vanilla.html" class="group block overflow-hidden rounded-lg shadow-lg transform transition hover:scale-105 bg-white">
+              <img src="img/young-beautiful-angry-crazy-brunette-businessgirl-clutching-her-head-screaming-looking-away-white-wall.png" alt="Produk 4" class="product-img w-full h-48 object-cover transition duration-500 group-hover:scale-110" />
+              <div class="p-4">
+                <h3 class="font-bold text-gray-900">Masalah Rambut Rontok</h3>
+              </div>
+            </a>
+          </li>
         </ul>
-    </div>
-</section>
-<!-- Produk Yang Tepat -->
-
-<!-- Produk Terlaris -->
-<section class="my-16 py-16">
-    <h2 class="text-center text-3xl font-bold text-gray-900 mb-12">Produk Terlaris</h2>
-    <div class="swiper-container mx-auto max-w-screen-xl">
+      </div>
+    </section>
+    <!-- Produk Yang Tepat -->
+    <!-- Produk Terlaris -->
+    <section class="my-16 py-16">
+      <h2 class="text-center text-3xl font-bold text-gray-900 mb-12">Produk Terlaris</h2>
+      <div class="swiper-container mx-auto max-w-screen-xl">
         <div class="swiper-wrapper">
-            <div class="swiper-slide staggered-animation">
-                <a href="/produk/detail-produk-Chocolate.html" class="group block overflow-hidden relative">
-                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
-                        <img src="img/Produk1.png" alt="Produk 1" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-                        <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
-                        <div class="product-details p-4 text-center">
-                            <h3 class="product-title text-lg font-semibold text-gray-800">Chocolate</h3>
-                            <p class="text-sm text-gray-600 mt-1">Delicious and creamy</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="swiper-slide staggered-animation">
-                <a href="/produk/detail-produk-Vanilla.html" class="group block overflow-hidden relative">
-                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
-                        <img src="img/Produk2.png" alt="Produk 2" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-                        <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
-                        <div class="product-details p-4 text-center">
-                            <h3 class="product-title text-lg font-semibold text-gray-800">Vanilla</h3>
-                            <p class="text-sm text-gray-600 mt-1">Smooth and fragrant</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="swiper-slide staggered-animation">
-                <a href="/produk/detail-produk-Aloevera.html" class="group block overflow-hidden relative">
-                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
-                        <img src="img/Produk3.png" alt="Produk 3" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-                        <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
-                        <div class="product-details p-4 text-center">
-                            <h3 class="product-title text-lg font-semibold text-gray-800">Aloevera</h3>
-                            <p class="text-sm text-gray-600 mt-1">Refreshing and soothing</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="swiper-slide staggered-animation">
-                <a href="/produk/detail-produk-Orange.html" class="group block overflow-hidden relative">
-                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
-                        <img src="img/Produk4.png" alt="Produk 4" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-                        <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
-                        <div class="product-details p-4 text-center">
-                            <h3 class="product-title text-lg font-semibold text-gray-800">Orange</h3>
-                            <p class="text-sm text-gray-600 mt-1">Zesty and vibrant</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="swiper-slide staggered-animation">
-                <a href="/produk/detail-produk-Banana.html" class="group block overflow-hidden relative">
-                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
-                        <img src="img/Produk5.png" alt="Produk 5" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-                        <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
-                        <div class="product-details p-4 text-center">
-                            <h3 class="product-title text-lg font-semibold text-gray-800">Banana</h3>
-                            <p class="text-sm text-gray-600 mt-1">Sweet and creamy</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="swiper-slide staggered-animation">
-                <a href="/produk/detail-produk-Avocado.html" class="group block overflow-hidden relative">
-                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
-                        <img src="img/Produk6.png" alt="Produk 6" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-                        <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
-                        <div class="product-details p-4 text-center">
-                            <h3 class="product-title text-lg font-semibold text-gray-800">Avocado</h3>
-                            <p class="text-sm text-gray-600 mt-1">Rich and creamy</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="swiper-slide staggered-animation">
-                <a href="/produk/detail-produk-Strawberry.html" class="group block overflow-hidden relative">
-                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
-                        <img src="img/Produk7.png" alt="Produk 7" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-                        <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
-                        <div class="product-details p-4 text-center">
-                            <h3 class="product-title text-lg font-semibold text-gray-800">Strawberry</h3>
-                            <p class="text-sm text-gray-600 mt-1">Fresh and sweet</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+          <div class="swiper-slide staggered-animation">
+            <a href="/produk/detail-produk-Chocolate.html" class="group block overflow-hidden relative">
+              <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+                <img src="img/Produk1.png" alt="Produk 1" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
+                <div class="product-details p-4 text-center">
+                  <h3 class="product-title text-lg font-semibold text-gray-800">Chocolate</h3>
+                  <p class="text-sm text-gray-600 mt-1">Delicious and creamy</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide staggered-animation">
+            <a href="/produk/detail-produk-Vanilla.html" class="group block overflow-hidden relative">
+              <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+                <img src="img/Produk2.png" alt="Produk 2" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
+                <div class="product-details p-4 text-center">
+                  <h3 class="product-title text-lg font-semibold text-gray-800">Vanilla</h3>
+                  <p class="text-sm text-gray-600 mt-1">Smooth and fragrant</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide staggered-animation">
+            <a href="/produk/detail-produk-Aloevera.html" class="group block overflow-hidden relative">
+              <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+                <img src="img/Produk3.png" alt="Produk 3" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
+                <div class="product-details p-4 text-center">
+                  <h3 class="product-title text-lg font-semibold text-gray-800">Aloevera</h3>
+                  <p class="text-sm text-gray-600 mt-1">Refreshing and soothing</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide staggered-animation">
+            <a href="/produk/detail-produk-Orange.html" class="group block overflow-hidden relative">
+              <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+                <img src="img/Produk4.png" alt="Produk 4" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
+                <div class="product-details p-4 text-center">
+                  <h3 class="product-title text-lg font-semibold text-gray-800">Orange</h3>
+                  <p class="text-sm text-gray-600 mt-1">Zesty and vibrant</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide staggered-animation">
+            <a href="/produk/detail-produk-Banana.html" class="group block overflow-hidden relative">
+              <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+                <img src="img/Produk5.png" alt="Produk 5" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
+                <div class="product-details p-4 text-center">
+                  <h3 class="product-title text-lg font-semibold text-gray-800">Banana</h3>
+                  <p class="text-sm text-gray-600 mt-1">Sweet and creamy</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide staggered-animation">
+            <a href="/produk/detail-produk-Avocado.html" class="group block overflow-hidden relative">
+              <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+                <img src="img/Produk6.png" alt="Produk 6" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
+                <div class="product-details p-4 text-center">
+                  <h3 class="product-title text-lg font-semibold text-gray-800">Avocado</h3>
+                  <p class="text-sm text-gray-600 mt-1">Rich and creamy</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide staggered-animation">
+            <a href="/produk/detail-produk-Strawberry.html" class="group block overflow-hidden relative">
+              <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
+                <img src="img/Produk7.png" alt="Produk 7" class="product-image w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div class="sale-badge bg-red-500 text-white absolute top-2 left-2 px-2 py-1 text-xs rounded">Sale</div>
+                <div class="product-details p-4 text-center">
+                  <h3 class="product-title text-lg font-semibold text-gray-800">Strawberry</h3>
+                  <p class="text-sm text-gray-600 mt-1">Fresh and sweet</p>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+    <!-- Produk Terlaris -->
+    <!-- Social Media Section -->
+    <section class="bg-gray-50 p-8 space-y-8">
+      <h1 class="text-3xl font-bold text-gray-900 text-center">Social Media</h1>
+      <div class="flex flex-wrap justify-center gap-8">
+        <a href="https://www.instagram.com/itsmyholy" class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4">
+          <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <img src="/img/IG.png" alt="Social Media Image" class="w-full h-56 object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent p-6 flex flex-col justify-end">
+              <h3 class="text-lg font-bold text-white">IG itsmyholy</h3>
+              <time datetime="2024" class="text-xs text-gray-200">2024</time>
+              <p class="mt-2 text-sm text-white line-clamp-3">HAIR MASK by IT'S MY HOLY Perfumed Hair Mask (formulated to damage hair) Long lasting Fragrance ♡ Cek Sekarang!</p>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/itsmyholy" class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4">
+          <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <img src="/img/IG.png" alt="Social Media Image" class="w-full h-56 object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent p-6 flex flex-col justify-end">
+              <h3 class="text-lg font-bold text-white">IG itsmyholy</h3>
+              <time datetime="2024" class="text-xs text-gray-200">2024</time>
+              <p class="mt-2 text-sm text-white line-clamp-3">HAIR MASK by IT'S MY HOLY Perfumed Hair Mask (formulated to damage hair) Long lasting Fragrance ♡ Cek Sekarang!</p>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/itsmyholy" class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4">
+          <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <img src="/img/IG.png" alt="Social Media Image" class="w-full h-56 object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent p-6 flex flex-col justify-end">
+              <h3 class="text-lg font-bold text-white">IG itsmyholy</h3>
+              <time datetime="2024" class="text-xs text-gray-200">2024</time>
+              <p class="mt-2 text-sm text-white line-clamp-3">HAIR MASK by IT'S MY HOLY Perfumed Hair Mask (formulated to damage hair) Long lasting Fragrance ♡ Cek Sekarang!</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+    <!-- End of Social Media Section -->
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed bottom-4 right-4 z-50">
+      <a href="https://api.whatsapp.com/send?phone=085265894479" target="_blank" rel="noopener noreferrer">
+      <button class="bg-green-500 text-white rounded-full p-3 shadow-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+      <img width="40" height="40" src="https://img.icons8.com/clouds/100/whatsapp.png" alt="whatsapp" />
+      </button>
+      </a>
     </div>
-</section>
-<!-- Produk Terlaris -->
-
-<!-- Social Media Section -->
-<section class="bg-gray-50 p-8 space-y-8">
-    <h1 class="text-3xl font-bold text-gray-900 text-center">Social Media</h1>
-    <div class="flex flex-wrap justify-center gap-8">
-        <a href="https://www.instagram.com/itsmyholy" class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4">
-            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                <img src="/img/IG.png" alt="Social Media Image" class="w-full h-56 object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent p-6 flex flex-col justify-end">
-                    <h3 class="text-lg font-bold text-white">IG itsmyholy</h3>
-                    <time datetime="2024" class="text-xs text-gray-200">2024</time>
-                    <p class="mt-2 text-sm text-white line-clamp-3">HAIR MASK by IT'S MY HOLY Perfumed Hair Mask (formulated to damage hair) Long lasting Fragrance ♡ Cek Sekarang!</p>
-                </div>
-            </div>
-        </a>
-        <a href="https://www.instagram.com/itsmyholy" class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4">
-            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                <img src="/img/IG.png" alt="Social Media Image" class="w-full h-56 object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent p-6 flex flex-col justify-end">
-                    <h3 class="text-lg font-bold text-white">IG itsmyholy</h3>
-                    <time datetime="2024" class="text-xs text-gray-200">2024</time>
-                    <p class="mt-2 text-sm text-white line-clamp-3">HAIR MASK by IT'S MY HOLY Perfumed Hair Mask (formulated to damage hair) Long lasting Fragrance ♡ Cek Sekarang!</p>
-                </div>
-            </div>
-        </a>
-        <a href="https://www.instagram.com/itsmyholy" class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4">
-            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                <img src="/img/IG.png" alt="Social Media Image" class="w-full h-56 object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent p-6 flex flex-col justify-end">
-                    <h3 class="text-lg font-bold text-white">IG itsmyholy</h3>
-                    <time datetime="2024" class="text-xs text-gray-200">2024</time>
-                    <p class="mt-2 text-sm text-white line-clamp-3">HAIR MASK by IT'S MY HOLY Perfumed Hair Mask (formulated to damage hair) Long lasting Fragrance ♡ Cek Sekarang!</p>
-                </div>
-            </div>
-        </a>
-    </div>
-</section>
-<!-- End of Social Media Section -->
-
-<!-- Floating WhatsApp Button -->
-<div class="fixed bottom-4 right-4 z-50">
-    <a href="https://api.whatsapp.com/send?phone=085265894479" target="_blank" rel="noopener noreferrer">
-        <button class="bg-green-500 text-white rounded-full p-3 shadow-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
-            <img width="40" height="40" src="https://img.icons8.com/clouds/100/whatsapp.png" alt="whatsapp" />
-        </button>
-    </a>
-</div>
-<!-- End Floating WhatsApp Button -->
-
-<!-- Footer -->
-<footer class="bg-pink-300">
-    <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+    <!-- End Floating WhatsApp Button -->
+    <!-- Footer -->
+    <footer class="bg-pink-300">
+      <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="flex justify-center text-teal-600">
-            <img src="img/Logo.png" alt="Logo" class="h-20 rounded-full " />
+          <img src="img/Logo.png" alt="Logo" class="h-20 rounded-full " />
         </div>
         <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
-            HAIR MASK by IT'S MY HOLY Perfumed Hair Mask (formulated to damage hair) Long lasting Fragrance ♡
+          HAIR MASK by IT'S MY HOLY Perfumed Hair Mask (formulated to damage hair) Long lasting Fragrance ♡
         </p>
         <ul class="mt-12 flex justify-center gap-6 md:gap-8">
-            <li>
-                <a href="https://www.instagram.com/itsmyholy/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
-                    <span class="sr-only">Instagram</span>
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
-                    </svg>
-                </a>
-            </li>
+          <li>
+            <a href="https://www.instagram.com/itsmyholy/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
+              <span class="sr-only">Instagram</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </li>
         </ul>
-    </div>
-</footer>
-<!-- Footer -->
-
-</body>
+      </div>
+    </footer>
+    <!-- Footer -->
+  </body>
 </html>

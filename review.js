@@ -15,12 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
           dropdown.classList.add('hidden');
       }
   }
-
-  const produkLinks = document.querySelectorAll("[data-toggle='produk']");
-  produkLinks.forEach(link => {
-      link.addEventListener("click", toggleDropdown);
-  });
-
   // Function to get cart count
   function getCartCount() {
       const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -48,6 +42,39 @@ document.addEventListener("DOMContentLoaded", function () {
       alert(`${productName} telah ditambahkan ke keranjang!`);
       updateCartCount();
   }
+  // Mendapatkan elemen dropdown
+const produkDropdown = document.getElementById('produkDropdown');
+const produkDropdownMobile = document.getElementById('produkDropdownMobile');
+
+// Fungsi untuk menampilkan/menyembunyikan dropdown
+function toggleDropdown(event) {
+  event.preventDefault(); // Mencegah tautan berpindah
+
+  // Menyembunyikan dropdown lain yang mungkin terbuka
+  const openDropdowns = document.querySelectorAll('.dropdown-menu:not([style*="display: none"])');
+  openDropdowns.forEach(dropdown => {
+    dropdown.style.display = 'none';
+  });
+
+  // Menampilkan/menyembunyikan dropdown yang diklik
+  if (produkDropdown.style.display === 'none' || produkDropdown.style.display === '') {
+    produkDropdown.style.display = 'block';
+  } else {
+    produkDropdown.style.display = 'none';
+  }
+
+  if (produkDropdownMobile.style.display === 'none' || produkDropdownMobile.style.display === '') {
+    produkDropdownMobile.style.display = 'block';
+  } else {
+    produkDropdownMobile.style.display = 'none';
+  }
+}
+
+// Menambahkan event listener pada tautan "Produk"
+const produkLinks = document.querySelectorAll('a[onclick="toggleDropdown(event)"]');
+produkLinks.forEach(link => {
+  link.addEventListener('click', toggleDropdown);
+});
 
   // Mobile menu toggle
   document.getElementById('menuButton').addEventListener('click', () => {

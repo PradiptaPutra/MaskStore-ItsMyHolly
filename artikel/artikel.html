@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artikel</title>
@@ -8,160 +8,155 @@
     <link rel="icon" href="/img/Logo.png">
     <link rel="stylesheet" href="/styles.css" />
     <script src="artikel.js" defer></script>
-</head>
-<body>
-<!-- Header -->
-<header class="bg-pink-300 shadow-lg rounded-2xl mb-6">
-  <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-    <div class="flex h-16 items-center justify-between">
-      <div class="md:flex md:items-center md:gap-12 shadow-md rounded-full p-2 bg-white">
-        <a class="block text-teal-600" href="/index.html">
-          <span class="sr-only">Home</span>
-          <img src="/img/Logo.png" alt="Logo" class="h-10 rounded-full transition-transform transform hover:scale-110" />
-        </a>
-      </div>
-      <div class="hidden md:block">
-        <nav aria-label="Global">
-          <ul class="flex items-center gap-6 text-sm">
-            <li>
-              <a class="text-white font-medium glowing" href="#" onclick="toggleDropdown(event)">
-                Produk
-                <svg class="h-4 w-4 inline-block ml-1 transition-transform transform hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                </svg>
-              </a>
-              <ul id="produkDropdown" class="absolute hidden bg-white shadow-lg rounded-md mt-2">
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="bg-pink-300 shadow-lg rounded-2xl mb-6">
+      <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <div class="md:flex md:items-center md:gap-12 shadow-md rounded-full p-2 bg-white">
+            <a class="block text-teal-600" href="/index.html">
+            <span class="sr-only">Home</span>
+            <img src="/img/Logo.png" alt="Logo" class="h-10 rounded-full transition-transform transform hover:scale-110" />
+            </a>
+          </div>
+          <div class="hidden md:block">
+            <nav aria-label="Global">
+              <ul class="flex items-center gap-6 text-sm">
                 <li>
-                  <a href="/produk/detail-produk-Aloevera.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Aloevera</a>
+                  <a class="text-white font-medium glowing" href="#" onclick="toggleDropdown(event)">
+                    Produk
+                    <svg class="h-4 w-4 inline-block ml-1 transition-transform transform hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                  <ul id="produkDropdown" class="absolute hidden bg-white shadow-lg rounded-md mt-2">
+                    <li>
+                      <a href="/produk/detail-produk-Aloevera.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Aloevera</a>
+                    </li>
+                    <li>
+                      <a href="/produk/detail-produk-Avocado.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Avocado</a>
+                    </li>
+                    <li>
+                      <a href="/produk/detail-produk-Banana.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Banana</a>
+                    </li>
+                    <li>
+                      <a href="/produk/detail-produk-Chocolate.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Chocolate</a>
+                    </li>
+                    <li>
+                      <a href="/produk/detail-produk-Orange.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Orange</a>
+                    </li>
+                    <li>
+                      <a href="/produk/detail-produk-Strawberry.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Strawberry</a>
+                    </li>
+                    <li>
+                      <a href="/produk/detail-produk-Vanilla.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Vanilla</a>
+                    </li>
+                  </ul>
                 </li>
                 <li>
-                  <a href="/produk/detail-produk-Avocado.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Avocado</a>
+                  <a class="text-white font-medium transition hover:text-gray-500/75" href="/review.html">Review</a>
                 </li>
                 <li>
-                  <a href="/produk/detail-produk-Banana.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Banana</a>
+                  <a class="text-white font-medium transition hover:text-gray-500/75" href="/haircare.html">Perawatan Rambut</a>
                 </li>
                 <li>
-                  <a href="/produk/detail-produk-Chocolate.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Chocolate</a>
+                  <a class="text-white font-medium transition hover:text-gray-500/75" href="/artikel/artikel.html">Artikel</a>
                 </li>
                 <li>
-                  <a href="/produk/detail-produk-Orange.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Orange</a>
+                  <a class="bg-rose-500 bg-cover text-white transition hover:text-gray-500/75 glowing rounded-md px-4 py-2" href="https://www.instagram.com/itsmyholy/">Shop</a>
                 </li>
-                <li>
-                  <a href="/produk/detail-produk-Strawberry.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Strawberry</a>
-                </li>
-                <li>
-                  <a href="/produk/detail-produk-Vanilla.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Vanilla</a>
+                <li class="flex gap-2">
+                  <a class="block text-sm text-white font-medium py-2 rounded-md bg-emerald-400 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER_HERE">
+                  <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" class="h-5 w-5 sm:mr-2" alt="WhatsApp" />
+                  <span>WhatsApp</span>
+                  </a>
+                  <a class="block text-sm text-white font-medium py-2 rounded-md bg-rose-500 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="/cart/cart.html" id="cartLink">
+                  <img src="https://img.icons8.com/ios-filled/50/FBF9F1/shopping-cart.png" class="h-5 w-5 sm:mr-2" alt="Cart" />
+                  <span>Cart</span>
+                  <span class="cart-count ml-2 bg-pink-200 text-white rounded-full px-2 py-1 text-xs"></span>
+                  </a>
                 </li>
               </ul>
+            </nav>
+          </div>
+          <div class="flex items-center gap-4 md:hidden">
+            <button id="menuButton" class="text-white focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="mobileMenu" class="mobile-menu hidden md:hidden bg-pink-200 shadow-lg rounded-2xl mt-6">
+        <ul class="flex flex-col items-start gap-2 p-4">
+          <li>
+            <a href="#" class="block text-sm text-white font-medium py-2" onclick="toggleDropdown(event)">Produk</a>
+          </li>
+          <ul id="produkDropdownMobile" class="hidden bg-white shadow-lg rounded-md ml-4">
+            <li>
+              <a href="/produk/detail-produk-Aloevera.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Aloevera</a>
             </li>
             <li>
-              <a class="text-white font-medium transition hover:text-gray-500/75" href="/review.html">Review</a>
+              <a href="/produk/detail-produk-Avocado.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Avocado</a>
             </li>
             <li>
-              <a class="text-white font-medium transition hover:text-gray-500/75" href="/haircare.html">Perawatan Rambut</a>
+              <a href="/produk/detail-produk-Banana.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Banana</a>
             </li>
             <li>
-              <a class="text-white font-medium transition hover:text-gray-500/75" href="/artikel/artikel.html">Artikel</a>
+              <a href="/produk/detail-produk-Chocolate.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Chocolate</a>
             </li>
             <li>
-              <a class="bg-rose-500 bg-cover text-white transition hover:text-gray-500/75 glowing rounded-md px-4 py-2" href="https://www.instagram.com/itsmyholy/">Shop</a>
+              <a href="/produk/detail-produk-Orange.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Orange</a>
             </li>
-            <li class="flex gap-2">
-              <a class="block text-sm text-white font-medium py-2 rounded-md bg-emerald-400 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER_HERE">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" class="h-5 w-5 sm:mr-2" alt="WhatsApp" />
-                <span>WhatsApp</span>
-              </a>
-              <a class="block text-sm text-white font-medium py-2 rounded-md bg-rose-500 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="/cart/cart.html" id="cartLink">
-                <img src="https://img.icons8.com/ios-filled/50/FBF9F1/shopping-cart.png" class="h-5 w-5 sm:mr-2" alt="Cart" />
-                <span>Cart</span>
-                <span class="cart-count ml-2 bg-pink-200 text-white rounded-full px-2 py-1 text-xs"></span>
-              </a>
+            <li>
+              <a href="/produk/detail-produk-Strawberry.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Strawberry</a>
+            </li>
+            <li>
+              <a href="/produk/detail-produk-Vanilla.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Vanilla</a>
             </li>
           </ul>
-        </nav>
+          <li>
+            <a href="/review.html" class="block text-sm text-white font-medium py-2">Review</a>
+          </li>
+          <li>
+            <a href="/haircare.html" class="block text-sm text-white font-medium py-2">Perawatan Rambut</a>
+          </li>
+          <li>
+            <a href="/artikel/artikel.html" class="block text-sm text-white font-medium py-2">Artikel</a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/itsmyholy/" class="block text-sm text-white font-medium py-2">Shop</a>
+          </li>
+          <li class="flex gap-2">
+            <a class="block text-sm text-white font-medium py-2 rounded-md bg-emerald-400 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER_HERE">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" class="h-5 w-5 sm:mr-2" alt="WhatsApp" />
+            <span>WhatsApp</span>
+            </a>
+            <a class="block text-sm text-white font-medium py-2 rounded-md bg-rose-500 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="/cart/cart.html" id="cartLink">
+            <img src="https://img.icons8.com/ios-filled/50/FBF9F1/shopping-cart.png" class="h-5 w-5 sm:mr-2" alt="Cart" />
+            <span>Cart</span>
+            <span class="cart-count ml-2 bg-pink-200 text-white rounded-full px-2 py-1 text-xs"></span>
+            </a>
+          </li>
+        </ul>
       </div>
-      <div class="flex items-center gap-4 md:hidden">
-        <button id="menuButton" class="text-white focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
+    </header>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       </div>
-    </div>
-  </div>
-  <div id="mobileMenu" class="mobile-menu hidden md:hidden bg-pink-200 shadow-lg rounded-2xl mt-6">
-    <ul class="flex flex-col items-start gap-2 p-4">
-      <li>
-        <a href="#" class="block text-sm text-white font-medium py-2" onclick="toggleDropdown(event)">Produk</a>
-      </li>
-      <ul id="produkDropdownMobile" class="hidden bg-white shadow-lg rounded-md ml-4">
-        <li>
-          <a href="/produk/detail-produk-Aloevera.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Aloevera</a>
-        </li>
-        <li>
-          <a href="/produk/detail-produk-Avocado.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Avocado</a>
-        </li>
-        <li>
-          <a href="/produk/detail-produk-Banana.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Banana</a>
-        </li>
-        <li>
-          <a href="/produk/detail-produk-Chocolate.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Chocolate</a>
-        </li>
-        <li>
-          <a href="/produk/detail-produk-Orange.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Orange</a>
-        </li>
-        <li>
-          <a href="/produk/detail-produk-Strawberry.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Strawberry</a>
-        </li>
-        <li>
-          <a href="/produk/detail-produk-Vanilla.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Vanilla</a>
-        </li>
-      </ul>
-      <li>
-        <a href="/review.html" class="block text-sm text-white font-medium py-2">Review</a>
-      </li>
-      <li>
-        <a href="/haircare.html" class="block text-sm text-white font-medium py-2">Perawatan Rambut</a>
-      </li>
-      <li>
-        <a href="/artikel/artikel.html" class="block text-sm text-white font-medium py-2">Artikel</a>
-      </li>
-      <li>
-        <a href="https://www.instagram.com/itsmyholy/" class="block text-sm text-white font-medium py-2">Shop</a>
-      </li>
-      <li class="flex gap-2">
-        <a class="block text-sm text-white font-medium py-2 rounded-md bg-emerald-400 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER_HERE">
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" class="h-5 w-5 sm:mr-2" alt="WhatsApp" />
-          <span>WhatsApp</span>
-        </a>
-        <a class="block text-sm text-white font-medium py-2 rounded-md bg-rose-500 px-5 py-2.5 flex items-center justify-center transition-transform transform hover:scale-110" href="/cart/cart.html" id="cartLink">
-          <img src="https://img.icons8.com/ios-filled/50/FBF9F1/shopping-cart.png" class="h-5 w-5 sm:mr-2" alt="Cart" />
-          <span>Cart</span>
-          <span class="cart-count ml-2 bg-pink-200 text-white rounded-full px-2 py-1 text-xs"></span>
-        </a>
-      </li>
-    </ul>
-  </div>
-</header>
-
-<!-- Main Content -->
-<main class="container mx-auto px-4">
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <!-- Kartu Artikel akan dirender di sini oleh JavaScript -->
-  </div>
-</main>
-
-<!-- Footer -->
-<!-- Floating WhatsApp Button -->
-<div class="fixed bottom-4 right-4 z-50">
-  <a href="https://api.whatsapp.com/send?phone=085265894479" target="_blank" rel="noopener noreferrer">
+    </main>
+    <!-- Footer -->
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed bottom-4 right-4 z-50">
+      <a href="https://api.whatsapp.com/send?phone=085265894479" target="_blank" rel="noopener noreferrer">
       <button class="bg-green-500 text-white rounded-full p-3 shadow-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
-          <img width="40" height="40" src="https://img.icons8.com/clouds/100/whatsapp.png" alt="whatsapp" />
+      <img width="40" height="40" src="https://img.icons8.com/clouds/100/whatsapp.png" alt="whatsapp" />
       </button>
-  </a>
-</div>
-<!-- End Floating WhatsApp Button -->
-
-
-</body>
+      </a>
+    </div>
+    <!-- End Floating WhatsApp Button -->
+  </body>
 </html>
