@@ -5,7 +5,7 @@
             title: 'Tips Mengatasi Rambut Rontok dengan Bahan Alami',
             description: 'Deskripsi singkat artikel pertama',
             image: '/img/woman-getting-hair-loss-treatment-clinic.png',
-            url: 'https://www.halodoc.com/artikel/12-cara-mengobati-rambut-rontok-secara-alami'
+            url: 'https://www.halodoc.com/artikel/ketahui-12-cara-mengatasi-rambut-rontok-secara-alami'
         },
         {
             id: 2,
